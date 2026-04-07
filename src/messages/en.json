@@ -1,0 +1,226 @@
+{
+  "common": {
+    "siteName": "JobPilot",
+    "tagline": "Your Navigator to the Dream Job",
+    "search": "Search",
+    "login": "Sign In",
+    "register": "Sign Up",
+    "logout": "Sign Out",
+    "dashboard": "Dashboard",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "contactUs": "Contact us"
+  },
+  "nav": {
+    "home": "Home",
+    "jobs": "Job Listings",
+    "coaching": "Coaching & Consulting",
+    "blog": "Career Guide",
+    "about": "About Us",
+    "contact": "Contact",
+    "forEmployers": "For Employers",
+    "forJobseekers": "For Job Seekers"
+  },
+  "hero": {
+    "title": "Find Your Dream Job in Hessen",
+    "subtitle": "JobPilot connects job seekers with top employers in Wiesbaden, Frankfurt, and all of Hessen. With personal guidance and AI-powered matching.",
+    "searchPlaceholder": "Job title, company, or keyword...",
+    "locationPlaceholder": "Location (e.g. Wiesbaden, Frankfurt...)",
+    "searchButton": "Find Jobs",
+    "stats": {
+      "jobs": "Active Job Listings",
+      "companies": "Partner Companies",
+      "placements": "Successful Placements",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "features": {
+    "title": "Why JobPilot?",
+    "subtitle": "We are more than a job board — we are your partner on the way to your new career.",
+    "jobMatching": {
+      "title": "Smart Job Matching",
+      "description": "Our AI analyzes your profile and finds matching positions in the Hessen region — automatically and accurately."
+    },
+    "coaching": {
+      "title": "Personal Coaching",
+      "description": "Professional guidance for applications, resumes, and interviews — also in cooperation with the Employment Agency."
+    },
+    "network": {
+      "title": "Strong Network",
+      "description": "Access exclusive job offers from top employers in Wiesbaden, Frankfurt, and the Rhine-Main area."
+    },
+    "support": {
+      "title": "Full Support",
+      "description": "From job search to your first day at work — we guide you through the entire application process."
+    }
+  },
+  "categories": {
+    "title": "Popular Categories",
+    "subtitle": "Discover job listings across various industries",
+    "it": "IT & Software",
+    "finance": "Finance & Banking",
+    "health": "Healthcare",
+    "engineering": "Engineering",
+    "sales": "Sales & Marketing",
+    "admin": "Administration",
+    "logistics": "Logistics & Transport",
+    "education": "Education & Social"
+  },
+  "cta": {
+    "title": "Ready for the Next Career Step?",
+    "subtitle": "Create your free profile and get discovered by the best employers in Hessen.",
+    "button": "Sign up for free",
+    "employerTitle": "Looking for qualified employees?",
+    "employerButton": "Register as employer"
+  },
+  "jobs": {
+    "title": "Job Listings",
+    "subtitle": "Find your next job in Hessen",
+    "filters": {
+      "category": "Category",
+      "location": "Location",
+      "type": "Employment Type",
+      "salary": "Salary"
+    },
+    "types": {
+      "vollzeit": "Full-time",
+      "teilzeit": "Part-time",
+      "minijob": "Mini Job",
+      "ausbildung": "Apprenticeship",
+      "praktikum": "Internship"
+    },
+    "noResults": "No job listings found. Try different search criteria.",
+    "apply": "Apply now",
+    "save": "Save",
+    "share": "Share",
+    "postedAgo": "{days} days ago",
+    "featured": "Featured"
+  },
+  "coaching": {
+    "title": "Coaching & Consulting",
+    "subtitle": "Professional support on your way to the dream job",
+    "services": {
+      "career": {
+        "title": "Career Consulting",
+        "description": "Individual advice on career goals, career changes, and professional reorientation."
+      },
+      "application": {
+        "title": "Application Support",
+        "description": "Professional assistance with cover letters, resumes, and application documents."
+      },
+      "interview": {
+        "title": "Interview Training",
+        "description": "Preparation for job interviews with simulated interviews and feedback."
+      },
+      "integration": {
+        "title": "Labor Market Integration",
+        "description": "Special programs in cooperation with the Employment Agency for re-entry."
+      }
+    },
+    "booking": {
+      "title": "Book Appointment",
+      "selectDate": "Select date",
+      "selectTime": "Select time",
+      "selectType": "Type of consultation",
+      "notes": "Notes (optional)",
+      "confirm": "Confirm appointment",
+      "success": "Your appointment has been successfully booked!"
+    }
+  },
+  "blog": {
+    "title": "Career Guide & Tips",
+    "subtitle": "Expert knowledge for your career — application tips, job market trends, and more.",
+    "categories": {
+      "bewerbung": "Application Tips",
+      "karriere": "Career",
+      "arbeitsmarkt": "Job Market",
+      "recht": "Employment Law",
+      "integration": "Integration"
+    },
+    "readTime": "{minutes} min read",
+    "publishedOn": "Published on {date}",
+    "relatedPosts": "Related Articles"
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to continue",
+    "registerTitle": "Create Account",
+    "registerSubtitle": "Start your job search with JobPilot today",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "name": "Full name",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "asJobseeker": "As Job Seeker",
+    "asEmployer": "As Employer"
+  },
+  "dashboard": {
+    "welcome": "Welcome, {name}!",
+    "overview": "Overview",
+    "applications": "My Applications",
+    "savedJobs": "Saved Jobs",
+    "messages": "Messages",
+    "profile": "My Profile",
+    "bookings": "My Appointments",
+    "settings": "Settings"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We look forward to hearing from you",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send message"
+    },
+    "info": {
+      "address": "Musterstraße 1, 65183 Wiesbaden",
+      "phone": "+49 611 123 456 78",
+      "email": "info@jobpilot-hessen.de",
+      "hours": "Mon–Fri: 9:00–18:00"
+    }
+  },
+  "about": {
+    "title": "About JobPilot",
+    "subtitle": "Your partner for successful job placement in Hessen",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We connect people with the right jobs — quickly, personally, and effectively. In close cooperation with the Employment Agency and regional companies, we build bridges between job seekers and employers in the Rhine-Main area."
+    },
+    "values": {
+      "title": "Our Values",
+      "personal": "Personal & Close",
+      "professional": "Professional & Competent",
+      "innovative": "Innovative & Modern",
+      "regional": "Regional & Connected"
+    }
+  },
+  "footer": {
+    "description": "JobPilot — Your navigator to the dream job in Hessen. Job placement, career counseling, and coaching in Wiesbaden, Frankfurt, and the Rhine-Main area.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "legal": "Legal",
+    "impressum": "Imprint",
+    "datenschutz": "Privacy Policy",
+    "agb": "Terms of Service",
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Get the latest job offers directly to your inbox.",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    },
+    "copyright": "© {year} JobPilot. All rights reserved."
+  }
+}

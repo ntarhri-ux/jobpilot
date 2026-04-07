@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  phone     String?
+  role      String   @default("jobseeker") // jobseeker, employer, advisor, admin
+  avatar    String?
+  bio       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  profile          Profile?
+  applications     Application[]
+  jobs             Job[]
+  sentMessages     Message[]    @relation("SentMessages")
+  receivedMessages Message[]    @relation("ReceivedMessages")
+  bookings         Booking[]
+  blogPosts        BlogPost[]
+}
+
+model Profile {
+  id           String  @id @default(cuid())
+  userId       String  @unique
+  user         User    @relation(fields: [userId], references: [id])
+  resumeUrl    String?
+  skills       String? // comma-separated
+  experience   String?
+  education    String?
+  location     String?
+  desiredJob   String?
+  availability String?
+  linkedIn     String?
+}
+
+model Job {
+  id           String    @id @default(cuid())
+  title        String
+  slug         String    @unique
+  company      String
+  location     String
+  type         String    // vollzeit, teilzeit, minijob, ausbildung, praktikum
+  category     String
+  salary       String?
+  description  String
+  requirements String
+  benefits     String?
+  contactEmail String?
+  isActive     Boolean   @default(true)
+  featured     Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  expiresAt    DateTime?
+
+  postedById   String
+  postedBy     User          @relation(fields: [postedById], references: [id])
+  applications Application[]
+}
+
+model Application {
+  id          String   @id @default(cuid())
+  status      String   @default("pending") // pending, reviewing, interview, accepted, rejected
+  coverLetter String?
+  resumeUrl   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  jobId  String
+  job    Job  @relation(fields: [jobId], references: [id])
+  userId String
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  content   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  senderId   String
+  sender     User @relation("SentMessages", fields: [senderId], references: [id])
+  receiverId String
+  receiver   User @relation("ReceivedMessages", fields: [receiverId], references: [id])
+}
+
+model Booking {
+  id       String   @id @default(cuid())
+  date     DateTime
+  time     String
+  duration Int      @default(60)
+  type     String   // beratung, coaching, bewerbungshilfe, lebenslauf-check
+  status   String   @default("pending") // pending, confirmed, cancelled, completed
+  notes    String?
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model BlogPost {
+  id         String   @id @default(cuid())
+  title      String
+  slug       String   @unique
+  excerpt    String
+  content    String
+  coverImage String?
+  category   String
+  tags       String?  // comma-separated
+  published  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  authorId String
+  author   User @relation(fields: [authorId], references: [id])
+}
+
+model ContactInquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  status    String   @default("new") // new, read, replied
+  createdAt DateTime @default(now())
+}

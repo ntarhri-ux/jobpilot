@@ -1,0 +1,226 @@
+{
+  "common": {
+    "siteName": "JobPilot",
+    "tagline": "Dein Navigator zum Traumjob",
+    "search": "Suchen",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "dashboard": "Dashboard",
+    "back": "Zurück",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "submit": "Absenden",
+    "loading": "Laden...",
+    "readMore": "Mehr erfahren",
+    "viewAll": "Alle anzeigen",
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Jetzt starten",
+    "contactUs": "Kontakt aufnehmen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "jobs": "Stellenangebote",
+    "coaching": "Coaching & Beratung",
+    "blog": "Ratgeber",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "forEmployers": "Für Arbeitgeber",
+    "forJobseekers": "Für Arbeitssuchende"
+  },
+  "hero": {
+    "title": "Finde deinen Traumjob in Hessen",
+    "subtitle": "JobPilot verbindet Arbeitssuchende mit Top-Arbeitgebern in Wiesbaden, Frankfurt und ganz Hessen. Mit persönlicher Beratung und KI-gestütztem Matching.",
+    "searchPlaceholder": "Jobtitel, Unternehmen oder Stichwort...",
+    "locationPlaceholder": "Ort (z.B. Wiesbaden, Frankfurt...)",
+    "searchButton": "Jobs finden",
+    "stats": {
+      "jobs": "Aktive Stellenangebote",
+      "companies": "Partner-Unternehmen",
+      "placements": "Erfolgreiche Vermittlungen",
+      "satisfaction": "Zufriedenheitsrate"
+    }
+  },
+  "features": {
+    "title": "Warum JobPilot?",
+    "subtitle": "Wir sind mehr als eine Jobbörse — wir sind dein Partner auf dem Weg zum neuen Job.",
+    "jobMatching": {
+      "title": "Intelligentes Job-Matching",
+      "description": "Unsere KI analysiert dein Profil und findet passende Stellen in der Region Hessen — automatisch und treffsicher."
+    },
+    "coaching": {
+      "title": "Persönliches Coaching",
+      "description": "Professionelle Beratung bei Bewerbung, Lebenslauf und Vorstellungsgespräch — auch in Zusammenarbeit mit dem Arbeitsamt."
+    },
+    "network": {
+      "title": "Starkes Netzwerk",
+      "description": "Zugang zu exklusiven Stellenangeboten von Top-Arbeitgebern in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet."
+    },
+    "support": {
+      "title": "Rundum-Betreuung",
+      "description": "Von der Jobsuche bis zum ersten Arbeitstag — wir begleiten dich durch den gesamten Bewerbungsprozess."
+    }
+  },
+  "categories": {
+    "title": "Beliebte Kategorien",
+    "subtitle": "Entdecke Stellenangebote in verschiedenen Branchen",
+    "it": "IT & Software",
+    "finance": "Finanzen & Banken",
+    "health": "Gesundheit & Pflege",
+    "engineering": "Ingenieurwesen",
+    "sales": "Vertrieb & Marketing",
+    "admin": "Verwaltung & Büro",
+    "logistics": "Logistik & Transport",
+    "education": "Bildung & Soziales"
+  },
+  "cta": {
+    "title": "Bereit für den nächsten Karriereschritt?",
+    "subtitle": "Erstelle dein kostenloses Profil und lass dich von den besten Arbeitgebern in Hessen finden.",
+    "button": "Kostenlos registrieren",
+    "employerTitle": "Sie suchen qualifizierte Mitarbeiter?",
+    "employerButton": "Als Arbeitgeber registrieren"
+  },
+  "jobs": {
+    "title": "Stellenangebote",
+    "subtitle": "Finde deinen nächsten Job in Hessen",
+    "filters": {
+      "category": "Kategorie",
+      "location": "Standort",
+      "type": "Beschäftigungsart",
+      "salary": "Gehalt"
+    },
+    "types": {
+      "vollzeit": "Vollzeit",
+      "teilzeit": "Teilzeit",
+      "minijob": "Minijob",
+      "ausbildung": "Ausbildung",
+      "praktikum": "Praktikum"
+    },
+    "noResults": "Keine Stellenangebote gefunden. Versuche andere Suchkriterien.",
+    "apply": "Jetzt bewerben",
+    "save": "Merken",
+    "share": "Teilen",
+    "postedAgo": "vor {days} Tagen",
+    "featured": "Empfohlen"
+  },
+  "coaching": {
+    "title": "Coaching & Beratung",
+    "subtitle": "Professionelle Unterstützung auf deinem Weg zum Traumjob",
+    "services": {
+      "career": {
+        "title": "Karriereberatung",
+        "description": "Individuelle Beratung zu Karrierezielen, Berufswechsel und beruflicher Neuorientierung."
+      },
+      "application": {
+        "title": "Bewerbungshilfe",
+        "description": "Professionelle Unterstützung bei Anschreiben, Lebenslauf und Bewerbungsunterlagen."
+      },
+      "interview": {
+        "title": "Interview-Training",
+        "description": "Vorbereitung auf Vorstellungsgespräche mit simulierten Interviews und Feedback."
+      },
+      "integration": {
+        "title": "Arbeitsmarkt-Integration",
+        "description": "Spezielle Programme in Zusammenarbeit mit dem Arbeitsamt für den Wiedereinstieg."
+      }
+    },
+    "booking": {
+      "title": "Termin buchen",
+      "selectDate": "Datum wählen",
+      "selectTime": "Uhrzeit wählen",
+      "selectType": "Art der Beratung",
+      "notes": "Anmerkungen (optional)",
+      "confirm": "Termin bestätigen",
+      "success": "Dein Termin wurde erfolgreich gebucht!"
+    }
+  },
+  "blog": {
+    "title": "Ratgeber & Tipps",
+    "subtitle": "Expertenwissen für deine Karriere — Bewerbungstipps, Arbeitsmarkt-Trends und mehr.",
+    "categories": {
+      "bewerbung": "Bewerbungstipps",
+      "karriere": "Karriere",
+      "arbeitsmarkt": "Arbeitsmarkt",
+      "recht": "Arbeitsrecht",
+      "integration": "Integration"
+    },
+    "readTime": "{minutes} Min. Lesezeit",
+    "publishedOn": "Veröffentlicht am {date}",
+    "relatedPosts": "Ähnliche Artikel"
+  },
+  "auth": {
+    "loginTitle": "Willkommen zurück",
+    "loginSubtitle": "Melde dich an, um fortzufahren",
+    "registerTitle": "Konto erstellen",
+    "registerSubtitle": "Starte jetzt deine Jobsuche mit JobPilot",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "name": "Vollständiger Name",
+    "rememberMe": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "asJobseeker": "Als Arbeitssuchender",
+    "asEmployer": "Als Arbeitgeber"
+  },
+  "dashboard": {
+    "welcome": "Willkommen, {name}!",
+    "overview": "Übersicht",
+    "applications": "Meine Bewerbungen",
+    "savedJobs": "Gespeicherte Jobs",
+    "messages": "Nachrichten",
+    "profile": "Mein Profil",
+    "bookings": "Meine Termine",
+    "settings": "Einstellungen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf deine Nachricht",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon (optional)",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "send": "Nachricht senden"
+    },
+    "info": {
+      "address": "Musterstraße 1, 65183 Wiesbaden",
+      "phone": "+49 611 123 456 78",
+      "email": "info@jobpilot-hessen.de",
+      "hours": "Mo–Fr: 9:00–18:00 Uhr"
+    }
+  },
+  "about": {
+    "title": "Über JobPilot",
+    "subtitle": "Dein Partner für erfolgreiche Jobvermittlung in Hessen",
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Wir verbinden Menschen mit den richtigen Jobs — schnell, persönlich und effektiv. In enger Zusammenarbeit mit dem Arbeitsamt und regionalen Unternehmen schaffen wir Brücken zwischen Arbeitssuchenden und Arbeitgebern im Rhein-Main-Gebiet."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "personal": "Persönlich & Nah",
+      "professional": "Professionell & Kompetent",
+      "innovative": "Innovativ & Modern",
+      "regional": "Regional & Vernetzt"
+    }
+  },
+  "footer": {
+    "description": "JobPilot — Dein Navigator zum Traumjob in Hessen. Jobvermittlung, Karriereberatung und Coaching in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet.",
+    "quickLinks": "Schnelllinks",
+    "services": "Services",
+    "legal": "Rechtliches",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "agb": "AGB",
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Erhalte die neuesten Jobangebote direkt in dein Postfach.",
+      "placeholder": "Deine E-Mail-Adresse",
+      "button": "Abonnieren"
+    },
+    "copyright": "© {year} JobPilot. Alle Rechte vorbehalten."
+  }
+}
