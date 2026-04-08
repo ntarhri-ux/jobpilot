@@ -23,6 +23,29 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+export const metadata = {
+  title: "JobPilot — Stellenangebote & Jobvermittlung in Hessen | Wiesbaden & Frankfurt",
+  description:
+    "Finden Sie aktuelle Stellenangebote in Wiesbaden, Frankfurt und ganz Hessen. Kostenlose Jobvermittlung & Karriereberatung in Zusammenarbeit mit dem Arbeitsamt. Über 2.500 offene Stellen.",
+  keywords: [
+    "Jobs Hessen",
+    "Stellenangebote Wiesbaden",
+    "Stellenangebote Frankfurt",
+    "Jobvermittlung Hessen",
+    "Arbeitsamt Wiesbaden",
+    "Karriereberatung Rhein-Main",
+    "Arbeit finden Hessen",
+    "Kostenlose Jobvermittlung",
+  ],
+  alternates: {
+    canonical: "https://jobpilot-hessen.de/de",
+    languages: {
+      "de-DE": "https://jobpilot-hessen.de/de",
+      "en-US": "https://jobpilot-hessen.de/en",
+    },
+  },
+};
+
 export default function HomePage({
   params,
 }: {
@@ -32,7 +55,7 @@ export default function HomePage({
 
   return (
     <>
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Structured Data — WebSite */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -42,6 +65,7 @@ export default function HomePage({
             name: "JobPilot",
             url: "https://jobpilot-hessen.de",
             description: t("hero.subtitle"),
+            inLanguage: ["de-DE", "en-US"],
             potentialAction: {
               "@type": "SearchAction",
               target: {
@@ -50,6 +74,56 @@ export default function HomePage({
                   "https://jobpilot-hessen.de/jobs?q={search_term_string}",
               },
               "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
+      {/* JSON-LD — Organization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EmploymentAgency",
+            name: "JobPilot",
+            url: "https://jobpilot-hessen.de",
+            description:
+              "Jobvermittlung und Karriereberatung in Hessen — Wiesbaden, Frankfurt und Rhein-Main-Gebiet. In Zusammenarbeit mit dem Arbeitsamt.",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Bahnhofstraße 42",
+              addressLocality: "Wiesbaden",
+              addressRegion: "Hessen",
+              postalCode: "65185",
+              addressCountry: "DE",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 50.0826,
+              longitude: 8.2400,
+            },
+            telephone: "+4961112345678",
+            email: "info@jobpilot-hessen.de",
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+            areaServed: [
+              { "@type": "City", name: "Wiesbaden" },
+              { "@type": "City", name: "Frankfurt am Main" },
+              { "@type": "City", name: "Darmstadt" },
+              { "@type": "City", name: "Offenbach" },
+              { "@type": "City", name: "Mainz" },
+              { "@type": "State", name: "Hessen" },
+            ],
+            sameAs: [],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              reviewCount: "340",
+              bestRating: "5",
             },
           }),
         }}

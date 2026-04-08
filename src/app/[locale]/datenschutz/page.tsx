@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung",
+  title: "Datenschutzerklärung — DSGVO",
+  description:
+    "Datenschutzerklärung von JobPilot. Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.",
+  robots: { index: true, follow: true },
 };
 
 export default function DatenschutzPage() {

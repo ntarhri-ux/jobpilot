@@ -14,9 +14,26 @@ import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Über uns",
+  title: "Über uns — JobPilot Jobvermittlung in Hessen seit 2024",
   description:
-    "JobPilot — Dein Partner für erfolgreiche Jobvermittlung in Hessen. In Zusammenarbeit mit dem Arbeitsamt verbinden wir Arbeitssuchende mit Arbeitgebern.",
+    "JobPilot ist Ihr Partner für Jobvermittlung in Hessen. In Zusammenarbeit mit dem Arbeitsamt verbinden wir Arbeitssuchende mit Arbeitgebern in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet.",
+  keywords: [
+    "Jobvermittlung Hessen",
+    "Arbeitsvermittlung Wiesbaden",
+    "Arbeitsamt Kooperation",
+    "Karriereberatung Team",
+  ],
+  openGraph: {
+    title: "Über JobPilot — Jobvermittlung in Hessen",
+    description: "Lernen Sie unser Team kennen. Professionelle Arbeitsvermittlung in Zusammenarbeit mit dem Arbeitsamt.",
+  },
+  alternates: {
+    canonical: "https://jobpilot-hessen.de/de/ueber-uns",
+    languages: {
+      "de-DE": "https://jobpilot-hessen.de/de/ueber-uns",
+      "en-US": "https://jobpilot-hessen.de/en/about",
+    },
+  },
 };
 
 export default function AboutPage() {

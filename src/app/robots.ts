@@ -2,11 +2,19 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/dashboard/", "/auth/", "/api/"],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/dashboard/", "/auth/", "/api/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/dashboard/", "/auth/", "/api/"],
+      },
+    ],
     sitemap: "https://jobpilot-hessen.de/sitemap.xml",
+    host: "https://jobpilot-hessen.de",
   };
 }

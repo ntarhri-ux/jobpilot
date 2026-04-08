@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Impressum",
+  title: "Impressum — Angaben gemäß § 5 TMG",
+  description:
+    "Impressum von JobPilot — Jobvermittlung in Hessen. Angaben gemäß § 5 TMG, Kontaktdaten und Verantwortliche.",
 };
 
 export default function ImpressumPage() {
