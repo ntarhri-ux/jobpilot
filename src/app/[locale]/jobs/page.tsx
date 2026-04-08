@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import {
   Search,
@@ -156,11 +157,27 @@ const TYPES = ["vollzeit", "teilzeit", "minijob", "ausbildung", "praktikum"];
 
 export default function JobsPage() {
   const t = useTranslations();
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useState("Alle Standorte");
   const [category, setCategory] = useState("Alle Kategorien");
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
+
+  // Read URL search params from homepage search
+  useEffect(() => {
+    const q = searchParams.get("q");
+    const ort = searchParams.get("ort");
+    const typ = searchParams.get("typ");
+    if (q) setSearchQuery(q);
+    if (ort) {
+      const matchedLocation = LOCATIONS.find((loc) =>
+        loc.toLowerCase().includes(ort.toLowerCase())
+      );
+      if (matchedLocation) setLocation(matchedLocation);
+    }
+    if (typ) setSelectedTypes([typ]);
+  }, [searchParams]);
 
   const filteredJobs = MOCK_JOBS.filter((job) => {
     const matchesSearch =

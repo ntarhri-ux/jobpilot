@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import HeroSearch from "@/components/HeroSearch";
 import {
   Search,
   MapPin,
@@ -152,44 +153,8 @@ export default function HomePage({
               {t("hero.subtitle")}
             </p>
 
-            {/* Search Bar */}
-            <div className="bg-white rounded-2xl p-2 shadow-2xl max-w-2xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-2">
-                <div className="flex-1 flex items-center gap-2 px-4 py-3">
-                  <Search className="w-5 h-5 text-muted flex-shrink-0" />
-                  <input
-                    type="text"
-                    placeholder={t("hero.searchPlaceholder")}
-                    className="w-full text-foreground text-sm focus:outline-none"
-                  />
-                </div>
-                <div className="flex-1 flex items-center gap-2 px-4 py-3 border-t sm:border-t-0 sm:border-l border-border">
-                  <MapPin className="w-5 h-5 text-muted flex-shrink-0" />
-                  <input
-                    type="text"
-                    placeholder={t("hero.locationPlaceholder")}
-                    className="w-full text-foreground text-sm focus:outline-none"
-                  />
-                </div>
-                <button className="bg-secondary hover:bg-secondary-light text-white px-8 py-3 rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-lg whitespace-nowrap">
-                  {t("hero.searchButton")}
-                </button>
-              </div>
-            </div>
-
-            {/* Quick tags */}
-            <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {["Frankfurt", "Wiesbaden", "Darmstadt", "IT Jobs", "Vollzeit"].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/80 hover:bg-white/20 cursor-pointer transition-colors"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
+            {/* Search Bar & Quick Tags */}
+            <HeroSearch />
           </div>
 
           {/* Stats */}
@@ -334,6 +299,7 @@ export default function HomePage({
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                slug: "senior-software-engineer-deutsche-bank",
                 title: "Senior Software Engineer",
                 company: "Deutsche Bank AG",
                 location: "Frankfurt am Main",
@@ -343,6 +309,7 @@ export default function HomePage({
                 featured: true,
               },
               {
+                slug: "marketing-manager-rv",
                 title: "Marketing Manager",
                 company: "R+V Versicherung",
                 location: "Wiesbaden",
@@ -352,6 +319,7 @@ export default function HomePage({
                 featured: false,
               },
               {
+                slug: "pflegefachkraft-helios",
                 title: "Pflegefachkraft (m/w/d)",
                 company: "HELIOS Klinikum",
                 location: "Wiesbaden",
@@ -361,6 +329,7 @@ export default function HomePage({
                 featured: true,
               },
               {
+                slug: "sachbearbeiter-finanzen-stadt-wiesbaden",
                 title: "Sachbearbeiter Finanzen",
                 company: "Stadt Wiesbaden",
                 location: "Wiesbaden",
@@ -370,6 +339,7 @@ export default function HomePage({
                 featured: false,
               },
               {
+                slug: "ausbildung-fachinformatiker-sap",
                 title: "Ausbildung Fachinformatiker",
                 company: "SAP SE",
                 location: "Eschborn",
@@ -379,6 +349,7 @@ export default function HomePage({
                 featured: false,
               },
               {
+                slug: "logistikleiter-dhl",
                 title: "Logistikleiter (m/w/d)",
                 company: "DHL Supply Chain",
                 location: "Frankfurt-Flughafen",
@@ -388,9 +359,10 @@ export default function HomePage({
                 featured: true,
               },
             ].map((job, i) => (
-              <div
+              <Link
                 key={i}
-                className="group relative bg-white rounded-2xl border border-border p-6 hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+                href={`/jobs/${job.slug}` as any}
+                className="group relative bg-white rounded-2xl border border-border p-6 hover:shadow-xl hover:border-primary/20 transition-all duration-300 block"
               >
                 {job.featured && (
                   <span className="absolute top-4 right-4 px-3 py-1 bg-accent/10 text-accent-dark text-xs font-semibold rounded-full">
@@ -429,7 +401,7 @@ export default function HomePage({
                     </span>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

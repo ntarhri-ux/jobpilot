@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,5 +38,5 @@ export default function JobsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <Suspense>{children}</Suspense>;
 }
