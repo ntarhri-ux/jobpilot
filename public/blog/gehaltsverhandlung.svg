@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#142842"/>
+      <stop offset="100%" style="stop-color:#2A5080"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg4)"/>
+  <!-- Euro symbols -->
+  <text x="200" y="180" fill="#D4A843" font-family="system-ui" font-size="120" font-weight="bold" opacity="0.15">€</text>
+  <text x="500" y="200" fill="#D4A843" font-family="system-ui" font-size="80" font-weight="bold" opacity="0.1">€</text>
+  <!-- Scale / balance -->
+  <line x1="400" y1="100" x2="400" y2="200" stroke="#D4A843" stroke-width="4"/>
+  <circle cx="400" cy="100" r="8" fill="#D4A843"/>
+  <line x1="280" y1="180" x2="520" y2="180" stroke="white" stroke-width="3" opacity="0.8"/>
+  <!-- Left plate -->
+  <path d="M260,180 Q270,210 310,210 L250,210 Q215,210 225,180" fill="white" opacity="0.2"/>
+  <rect x="245" y="195" width="80" height="5" rx="2" fill="white" opacity="0.3"/>
+  <!-- Right plate (higher - more money) -->
+  <path d="M475,170 Q485,200 525,200 L465,200 Q430,200 440,170" fill="#D4A843" opacity="0.3"/>
+  <rect x="460" y="185" width="80" height="5" rx="2" fill="#D4A843" opacity="0.4"/>
+  <!-- Arrow up on right -->
+  <g transform="translate(530,130)">
+    <path d="M0,25 L0,0 M-8,8 L0,0 L8,8" stroke="#D4A843" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Coins stack -->
+  <g transform="translate(620,220)">
+    <ellipse cx="0" cy="0" rx="25" ry="8" fill="#D4A843" opacity="0.6"/>
+    <ellipse cx="0" cy="-10" rx="25" ry="8" fill="#D4A843" opacity="0.7"/>
+    <ellipse cx="0" cy="-20" rx="25" ry="8" fill="#D4A843" opacity="0.8"/>
+    <ellipse cx="0" cy="-30" rx="25" ry="8" fill="#D4A843" opacity="0.9"/>
+    <ellipse cx="0" cy="-40" rx="25" ry="8" fill="#D4A843"/>
+  </g>
+  <!-- Handshake -->
+  <g transform="translate(400,270)" opacity="0.5">
+    <path d="M-40,0 L-15,-5 L0,5 L15,-5 L40,0" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="340" text-anchor="middle" fill="white" font-family="system-ui" font-size="22" font-weight="bold" opacity="0.9">Gehaltsverhandlung meistern</text>
+  <text x="400" y="368" text-anchor="middle" fill="#D4A843" font-family="system-ui" font-size="14" opacity="0.7">Strategien für mehr Gehalt</text>
+</svg>

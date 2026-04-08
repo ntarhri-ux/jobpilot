@@ -452,38 +452,42 @@ export default function HomePage({
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
+                slug: "10-tipps-vorstellungsgespraech",
                 title: "10 Tipps für das perfekte Vorstellungsgespräch",
                 excerpt:
                   "So überzeugst du im Bewerbungsgespräch: Vorbereitung, Körpersprache und die richtigen Antworten auf schwierige Fragen.",
                 category: "Bewerbungstipps",
-                readTime: "5",
+                readTime: "12",
                 date: "15. März 2026",
+                image: "/blog/vorstellungsgespraech.svg",
               },
               {
+                slug: "arbeitsmarkt-hessen-2026",
                 title: "Arbeitsmarkt Hessen 2026: Trends und Chancen",
                 excerpt:
                   "Welche Branchen boomen in der Rhein-Main-Region? Ein Überblick über die aktuellen Entwicklungen und Zukunftsprognosen.",
                 category: "Arbeitsmarkt",
-                readTime: "7",
+                readTime: "14",
                 date: "10. März 2026",
+                image: "/blog/arbeitsmarkt-hessen.svg",
               },
               {
+                slug: "lebenslauf-guide",
                 title: "Lebenslauf schreiben: Der ultimative Guide",
                 excerpt:
                   "Von der Struktur bis zum Design: Alles, was du für einen professionellen Lebenslauf wissen musst.",
-                category: "Karriere",
-                readTime: "8",
+                category: "Bewerbungstipps",
+                readTime: "15",
                 date: "5. März 2026",
+                image: "/blog/lebenslauf.svg",
               },
             ].map((post, i) => (
+              <Link key={i} href={`/blog/${post.slug}` as any} className="block group">
               <article
-                key={i}
-                className="group bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 h-full"
               >
-                <div className="h-48 gradient-primary relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <BookOpen className="w-16 h-16 text-white/20" />
-                  </div>
+                <div className="h-48 relative overflow-hidden">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                   <span className="absolute top-4 left-4 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                     {post.category}
                   </span>
@@ -507,6 +511,7 @@ export default function HomePage({
                   </div>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
         </div>

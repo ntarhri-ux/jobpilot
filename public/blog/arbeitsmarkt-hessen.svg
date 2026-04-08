@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#142842"/>
+      <stop offset="100%" style="stop-color:#1E3A5F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg2)"/>
+  <!-- Chart bars -->
+  <rect x="140" y="240" width="55" height="80" rx="4" fill="#D4A843" opacity="0.7"/>
+  <rect x="215" y="200" width="55" height="120" rx="4" fill="#D4A843" opacity="0.8"/>
+  <rect x="290" y="160" width="55" height="160" rx="4" fill="#C1121F" opacity="0.8"/>
+  <rect x="365" y="180" width="55" height="140" rx="4" fill="#D4A843" opacity="0.75"/>
+  <rect x="440" y="140" width="55" height="180" rx="4" fill="#C1121F" opacity="0.9"/>
+  <rect x="515" y="120" width="55" height="200" rx="4" fill="#D4A843" opacity="0.85"/>
+  <rect x="590" y="100" width="55" height="220" rx="4" fill="#C1121F"/>
+  <!-- Trend line -->
+  <path d="M165,230 L240,190 L315,150 L390,165 L465,130 L540,110 L615,90" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <!-- Dots on line -->
+  <circle cx="165" cy="230" r="5" fill="white" opacity="0.8"/>
+  <circle cx="315" cy="150" r="5" fill="white" opacity="0.8"/>
+  <circle cx="465" cy="130" r="5" fill="white" opacity="0.8"/>
+  <circle cx="615" cy="90" r="6" fill="#D4A843"/>
+  <!-- Arrow up -->
+  <g transform="translate(680,80)">
+    <path d="M0,30 L0,-10 M-10,0 L0,-10 L10,0" stroke="#D4A843" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Map outline of Hessen (simplified) -->
+  <path d="M80,100 L110,80 L130,95 L120,130 L100,150 L85,140 Z" fill="white" opacity="0.1" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+  <circle cx="105" cy="115" r="4" fill="#D4A843" opacity="0.6"/>
+  <text x="400" y="360" text-anchor="middle" fill="white" font-family="system-ui" font-size="22" font-weight="bold" opacity="0.9">Arbeitsmarkt Hessen 2026</text>
+</svg>

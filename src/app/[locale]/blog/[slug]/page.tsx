@@ -1,5 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import { notFound } from "next/navigation";
+import Image from "next/image";
 import {
   ArrowLeft,
   Clock,
@@ -8,186 +10,362 @@ import {
   Share2,
   Bookmark,
   ArrowRight,
-  BookOpen,
+  Tag,
 } from "lucide-react";
+import { BLOG_POSTS, getBlogPostBySlug, getRelatedPosts } from "@/lib/blog-data";
+import type { Metadata } from "next";
 
-export default function BlogPostPage() {
-  const t = useTranslations();
+export function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.tags,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      images: [{ url: post.image }],
+    },
+  };
+}
+
+function renderMarkdown(content: string) {
+  const lines = content.split("\n");
+  const elements: React.ReactNode[] = [];
+  let i = 0;
+  let listItems: string[] = [];
+
+  const flushList = () => {
+    if (listItems.length > 0) {
+      elements.push(
+        <ul key={`list-${i}`} className="space-y-2 my-4">
+          {listItems.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
+              <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
+            </li>
+          ))}
+        </ul>
+      );
+      listItems = [];
+    }
+  };
+
+  const formatInline = (text: string): string => {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>');
+  };
+
+  while (i < lines.length) {
+    const line = lines[i].trim();
+
+    if (!line) {
+      flushList();
+      i++;
+      continue;
+    }
+
+    // Table detection
+    if (line.includes("|") && line.startsWith("|")) {
+      flushList();
+      const tableRows: string[][] = [];
+      let j = i;
+      while (j < lines.length && lines[j].trim().startsWith("|")) {
+        const row = lines[j]
+          .trim()
+          .split("|")
+          .filter((cell) => cell.trim() !== "")
+          .map((cell) => cell.trim());
+        if (!lines[j].trim().match(/^\|[\s-|]+\|$/)) {
+          tableRows.push(row);
+        }
+        j++;
+      }
+      if (tableRows.length > 0) {
+        const header = tableRows[0];
+        const body = tableRows.slice(1);
+        elements.push(
+          <div key={`table-${i}`} className="overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/5">
+                  {header.map((cell, idx) => (
+                    <th
+                      key={idx}
+                      className="px-4 py-3 text-left font-semibold text-foreground border-b border-border"
+                      dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
+                    />
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {body.map((row, rowIdx) => (
+                  <tr
+                    key={rowIdx}
+                    className={rowIdx % 2 === 0 ? "bg-white" : "bg-background"}
+                  >
+                    {row.map((cell, cellIdx) => (
+                      <td
+                        key={cellIdx}
+                        className="px-4 py-3 border-b border-border text-muted"
+                        dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
+                      />
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+      i = j;
+      continue;
+    }
+
+    // Headings
+    if (line.startsWith("## ")) {
+      flushList();
+      elements.push(
+        <h2
+          key={`h2-${i}`}
+          className="text-2xl font-bold text-foreground mt-10 mb-4"
+        >
+          {line.replace("## ", "")}
+        </h2>
+      );
+      i++;
+      continue;
+    }
+
+    if (line.startsWith("### ")) {
+      flushList();
+      elements.push(
+        <h3
+          key={`h3-${i}`}
+          className="text-xl font-bold text-foreground mt-8 mb-3"
+        >
+          {line.replace("### ", "")}
+        </h3>
+      );
+      i++;
+      continue;
+    }
+
+    // List items
+    if (line.startsWith("- ") || line.startsWith("* ")) {
+      listItems.push(line.slice(2));
+      i++;
+      continue;
+    }
+
+    // Numbered list
+    if (/^\d+\.\s/.test(line)) {
+      flushList();
+      const numItems: string[] = [];
+      let j = i;
+      while (j < lines.length && /^\d+\.\s/.test(lines[j].trim())) {
+        numItems.push(lines[j].trim().replace(/^\d+\.\s/, ""));
+        j++;
+      }
+      elements.push(
+        <ol key={`ol-${i}`} className="space-y-2 my-4 list-decimal list-inside">
+          {numItems.map((item, idx) => (
+            <li
+              key={idx}
+              className="text-muted"
+              dangerouslySetInnerHTML={{ __html: formatInline(item) }}
+            />
+          ))}
+        </ol>
+      );
+      i = j;
+      continue;
+    }
+
+    // Regular paragraph
+    flushList();
+    elements.push(
+      <p
+        key={`p-${i}`}
+        className="text-muted leading-relaxed my-3"
+        dangerouslySetInnerHTML={{ __html: formatInline(line) }}
+      />
+    );
+    i++;
+  }
+
+  flushList();
+  return elements;
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const relatedPosts = getRelatedPosts(post.relatedSlugs);
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <Link
-        href="/blog"
-        className="inline-flex items-center gap-2 text-muted hover:text-primary text-sm mb-6 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" /> {t("common.back")} zum Ratgeber
-      </Link>
+    <>
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            image: `https://jobpilot-hessen.de${post.image}`,
+            author: { "@type": "Person", name: post.author },
+            publisher: {
+              "@type": "Organization",
+              name: "JobPilot",
+            },
+            datePublished: post.date,
+            keywords: post.tags.join(", "),
+          }),
+        }}
+      />
 
-      {/* Article Header */}
-      <header className="mb-8">
-        <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-          Bewerbungstipps
-        </span>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-          10 Tipps für das perfekte Vorstellungsgespräch
-        </h1>
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
-          <span className="flex items-center gap-1">
-            <User className="w-4 h-4" /> Sarah Müller
-          </span>
-          <span className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" /> 15. März 2026
-          </span>
-          <span className="flex items-center gap-1">
-            <Clock className="w-4 h-4" /> 5 Min. Lesezeit
-          </span>
-        </div>
-      </header>
-
-      {/* Cover Image Placeholder */}
-      <div className="h-64 sm:h-80 gradient-primary rounded-3xl mb-10 flex items-center justify-center relative overflow-hidden">
-        <BookOpen className="w-24 h-24 text-white/10" />
-      </div>
-
-      {/* Article Content */}
-      <div className="prose prose-lg max-w-none text-muted leading-relaxed space-y-6">
-        <p className="text-lg font-medium text-foreground">
-          Ein Vorstellungsgespräch kann über deine berufliche Zukunft
-          entscheiden. Mit der richtigen Vorbereitung kannst du selbstbewusst
-          auftreten und einen bleibenden Eindruck hinterlassen. Hier sind unsere
-          10 besten Tipps.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          1. Recherchiere das Unternehmen gründlich
-        </h2>
-        <p>
-          Informiere dich über die Unternehmensgeschichte, aktuelle Projekte,
-          Werte und die Unternehmenskultur. Besuche die Webseite, lies aktuelle
-          Pressemitteilungen und schau dir die Social-Media-Kanäle an. Zeige im
-          Gespräch, dass du weißt, worauf sich das Unternehmen fokussiert.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          2. Bereite Antworten auf häufige Fragen vor
-        </h2>
-        <p>
-          Klassische Fragen wie &quot;Erzählen Sie etwas über sich&quot;, &quot;Warum möchten
-          Sie bei uns arbeiten?&quot; oder &quot;Wo sehen Sie sich in fünf Jahren?&quot;
-          kommen fast immer. Übe deine Antworten laut — am besten vor einem
-          Spiegel oder mit einem Freund.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          3. Kleide dich angemessen
-        </h2>
-        <p>
-          Der erste Eindruck zählt. Wähle dein Outfit passend zur
-          Unternehmenskultur. Im Bankensektor in Frankfurt ist ein Anzug
-          angebracht, während in einem Startup eine gepflegte
-          Business-Casual-Garderobe reicht.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          4. Achte auf Körpersprache
-        </h2>
-        <p>
-          Ein fester Händedruck, Blickkontakt und eine aufrechte Haltung
-          signalisieren Selbstbewusstsein. Vermeide verschränkte Arme oder
-          nervöses Zappeln. Lächle natürlich und zeige echtes Interesse.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          5. Stelle eigene Fragen
-        </h2>
-        <p>
-          Bereite mindestens 3-5 Fragen vor, die du am Ende stellen kannst. Das
-          zeigt Interesse und Engagement. Frage zum Beispiel nach dem Team, den
-          Entwicklungsmöglichkeiten oder aktuellen Herausforderungen.
-        </p>
-
-        <div className="bg-primary/5 rounded-2xl p-6 my-8 border-l-4 border-primary">
-          <p className="font-semibold text-foreground mb-2">
-            Tipp von JobPilot:
-          </p>
-          <p>
-            Nutze unser kostenloses Interview-Training, um dich optimal
-            vorzubereiten. Unsere Berater simulieren reale
-            Vorstellungsgespräche und geben dir wertvolles Feedback.
-          </p>
-        </div>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          6. Sei pünktlich
-        </h2>
-        <p>
-          Plane genug Zeit für die Anreise ein. 10-15 Minuten vor dem Termin da
-          zu sein ist ideal. Bei Online-Interviews: Teste vorher die Technik
-          und sorge für eine ruhige Umgebung.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          7. Bringe relevante Unterlagen mit
-        </h2>
-        <p>
-          Drucke deinen Lebenslauf, das Anschreiben und Zeugnisse aus. Ein
-          Notizblock für eigene Notizen zeigt Professionalität.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          8. Nutze die STAR-Methode
-        </h2>
-        <p>
-          Bei Verhaltensfragen (Situation, Task, Action, Result): Beschreibe
-          eine konkrete Situation, deine Aufgabe, was du getan hast und welches
-          Ergebnis du erzielt hast. Das macht deine Antworten greifbar.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          9. Sei authentisch
-        </h2>
-        <p>
-          Verstelle dich nicht. Arbeitgeber suchen echte Menschen, die ins Team
-          passen. Sei ehrlich über deine Stärken und Schwächen — und zeige, wie
-          du an dir arbeitest.
-        </p>
-
-        <h2 className="text-2xl font-bold text-foreground mt-8">
-          10. Follow-up nicht vergessen
-        </h2>
-        <p>
-          Eine kurze Dankes-E-Mail nach dem Gespräch hinterlässt einen positiven
-          Eindruck. Bedanke dich für die Zeit und betone nochmals dein Interesse
-          an der Stelle.
-        </p>
-      </div>
-
-      {/* Share & Save */}
-      <div className="flex items-center gap-4 mt-10 pt-8 border-t border-border">
-        <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-sm text-muted hover:text-primary hover:border-primary transition-all">
-          <Share2 className="w-4 h-4" /> Teilen
-        </button>
-        <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-sm text-muted hover:text-primary hover:border-primary transition-all">
-          <Bookmark className="w-4 h-4" /> Speichern
-        </button>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-10 bg-primary/5 rounded-3xl p-8 text-center">
-        <h3 className="text-xl font-bold text-foreground mb-2">
-          Brauchst du Hilfe bei der Bewerbung?
-        </h3>
-        <p className="text-muted mb-6">
-          Unsere Karriereberater helfen dir beim Interview-Training und der
-          Bewerbungsvorbereitung.
-        </p>
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link
-          href="/coaching"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-light transition-all"
+          href="/blog"
+          className="inline-flex items-center gap-2 text-muted hover:text-primary text-sm mb-6 transition-colors"
         >
-          Coaching buchen <ArrowRight className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4" /> Zurück zum Ratgeber
         </Link>
-      </div>
-    </article>
+
+        {/* Article Header */}
+        <header className="mb-8">
+          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+            {post.category}
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
+            {post.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
+            <span className="flex items-center gap-1">
+              <User className="w-4 h-4" /> {post.author}
+            </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" /> {post.date}
+            </span>
+            <span className="flex items-center gap-1">
+              <Clock className="w-4 h-4" /> {post.readTime} Min. Lesezeit
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-4">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center gap-1 px-3 py-1 bg-background text-muted rounded-full text-xs"
+              >
+                <Tag className="w-3 h-3" /> {tag}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        {/* Cover Image */}
+        <div className="h-64 sm:h-80 relative rounded-3xl mb-10 overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Article Content */}
+        <div className="prose prose-lg max-w-none">
+          {renderMarkdown(post.content)}
+        </div>
+
+        {/* Share & Save */}
+        <div className="flex items-center gap-4 mt-10 pt-8 border-t border-border">
+          <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-sm text-muted hover:text-primary hover:border-primary transition-all">
+            <Share2 className="w-4 h-4" /> Teilen
+          </button>
+          <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-sm text-muted hover:text-primary hover:border-primary transition-all">
+            <Bookmark className="w-4 h-4" /> Speichern
+          </button>
+        </div>
+
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              Ähnliche Artikel
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}` as any}
+                  className="group block"
+                >
+                  <article className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all duration-200">
+                    <div className="h-32 relative overflow-hidden bg-primary">
+                      <Image
+                        src={related.image}
+                        alt={related.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <span className="text-xs text-muted">
+                        {related.category} • {related.readTime} Min.
+                      </span>
+                      <h3 className="text-sm font-bold text-foreground mt-1 group-hover:text-primary transition-colors line-clamp-2">
+                        {related.title}
+                      </h3>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* CTA */}
+        <div className="mt-12 bg-primary/5 rounded-3xl p-8 text-center">
+          <h3 className="text-xl font-bold text-foreground mb-2">
+            Brauchst du Hilfe bei der Bewerbung?
+          </h3>
+          <p className="text-muted mb-6">
+            Unsere Karriereberater helfen dir beim Interview-Training und der
+            Bewerbungsvorbereitung — kostenlos mit Vermittlungsgutschein.
+          </p>
+          <Link
+            href="/coaching"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-light transition-all"
+          >
+            Coaching buchen <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </article>
+    </>
   );
 }
