@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800" fill="none">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1f3c"/>
+      <stop offset="40%" stop-color="#1a3456"/>
+      <stop offset="100%" stop-color="#2a5080"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3456" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0d1f3c" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background sky -->
+  <rect width="1920" height="800" fill="url(#sky)"/>
+
+  <!-- Distant hills / Taunus -->
+  <path d="M0 520 Q200 440 400 470 Q600 430 800 460 Q1000 420 1200 450 Q1400 410 1600 440 Q1800 420 1920 450 L1920 800 L0 800Z" fill="#142842" opacity="0.5"/>
+
+  <!-- Mid-ground hills -->
+  <path d="M0 560 Q150 510 350 530 Q550 500 750 520 Q950 490 1150 510 Q1350 485 1550 505 Q1750 490 1920 510 L1920 800 L0 800Z" fill="#162d48" opacity="0.6"/>
+
+  <!-- Wiesbaden Kurhaus (iconic building, center) -->
+  <g transform="translate(860, 380)">
+    <!-- Main building body -->
+    <rect x="0" y="60" width="200" height="120" fill="#1e3a5f" stroke="#2a5080" stroke-width="0.5"/>
+    <!-- Columns -->
+    <rect x="20" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="40" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="60" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="80" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="100" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="120" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="140" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <rect x="160" y="70" width="6" height="100" fill="#2a5080" opacity="0.7"/>
+    <!-- Dome -->
+    <ellipse cx="100" cy="60" rx="60" ry="35" fill="#1a3456" stroke="#2a5080" stroke-width="0.5"/>
+    <ellipse cx="100" cy="55" rx="20" ry="15" fill="#1e3a5f" stroke="#2a5080" stroke-width="0.5"/>
+    <!-- Windows (lit) -->
+    <rect x="30" y="90" width="8" height="12" fill="#D4A843" opacity="0.3" rx="1"/>
+    <rect x="55" y="90" width="8" height="12" fill="#D4A843" opacity="0.25" rx="1"/>
+    <rect x="80" y="90" width="8" height="12" fill="#D4A843" opacity="0.35" rx="1"/>
+    <rect x="110" y="90" width="8" height="12" fill="#D4A843" opacity="0.3" rx="1"/>
+    <rect x="140" y="90" width="8" height="12" fill="#D4A843" opacity="0.2" rx="1"/>
+    <rect x="165" y="90" width="8" height="12" fill="#D4A843" opacity="0.3" rx="1"/>
+  </g>
+
+  <!-- Frankfurt Skyline (right side, distance) -->
+  <g transform="translate(1300, 350)" opacity="0.5">
+    <!-- Main Tower -->
+    <rect x="0" y="40" width="18" height="160" fill="#1a3456"/>
+    <rect x="3" y="45" width="2" height="6" fill="#D4A843" opacity="0.2"/>
+    <rect x="8" y="55" width="2" height="6" fill="#D4A843" opacity="0.15"/>
+    <rect x="13" y="48" width="2" height="6" fill="#D4A843" opacity="0.2"/>
+    <!-- Commerzbank Tower -->
+    <rect x="30" y="20" width="16" height="180" fill="#162d48"/>
+    <rect x="33" y="25" width="2" height="6" fill="#D4A843" opacity="0.15"/>
+    <rect x="40" y="35" width="2" height="6" fill="#D4A843" opacity="0.2"/>
+    <!-- EZB -->
+    <rect x="60" y="60" width="22" height="140" fill="#1a3456"/>
+    <rect x="70" y="50" width="14" height="150" fill="#1e3a5f"/>
+    <!-- More towers -->
+    <rect x="95" y="80" width="14" height="120" fill="#162d48"/>
+    <rect x="115" y="50" width="12" height="150" fill="#1a3456"/>
+    <rect x="135" y="70" width="16" height="130" fill="#162d48"/>
+    <!-- Scattered lights -->
+    <rect x="97" y="90" width="2" height="4" fill="#D4A843" opacity="0.2"/>
+    <rect x="117" y="70" width="2" height="4" fill="#D4A843" opacity="0.15"/>
+    <rect x="137" y="85" width="2" height="4" fill="#D4A843" opacity="0.2"/>
+  </g>
+
+  <!-- Church / Marktkirche (left side) -->
+  <g transform="translate(500, 400)">
+    <rect x="0" y="40" width="50" height="100" fill="#1a3456" opacity="0.7"/>
+    <!-- Spire -->
+    <polygon points="25,0 35,40 15,40" fill="#1e3a5f" opacity="0.8"/>
+    <!-- Window -->
+    <rect x="18" y="60" width="6" height="10" fill="#D4A843" opacity="0.2" rx="1"/>
+    <rect x="28" y="60" width="6" height="10" fill="#D4A843" opacity="0.15" rx="1"/>
+  </g>
+
+  <!-- Buildings left side -->
+  <g transform="translate(200, 430)" opacity="0.5">
+    <rect x="0" y="20" width="40" height="80" fill="#1a3456"/>
+    <rect x="50" y="0" width="35" height="100" fill="#162d48"/>
+    <rect x="95" y="30" width="45" height="70" fill="#1a3456"/>
+    <rect x="5" y="35" width="4" height="6" fill="#D4A843" opacity="0.15"/>
+    <rect x="15" y="45" width="4" height="6" fill="#D4A843" opacity="0.2"/>
+    <rect x="55" y="20" width="4" height="6" fill="#D4A843" opacity="0.15"/>
+    <rect x="100" y="45" width="4" height="6" fill="#D4A843" opacity="0.2"/>
+  </g>
+
+  <!-- Foreground city silhouette -->
+  <path d="M0 600 L0 550 L60 550 L60 520 L100 520 L100 540 L180 540 L180 510 L200 510 L200 490 L220 490 L220 530 L300 530 L300 500 L330 500 L330 480 L350 480 L350 520 L420 520 L420 540 L500 540 L680 540 L680 500 L700 500 L700 480 L720 480 L720 520 L800 520 L800 540 L860 540 L1060 540 L1060 520 L1100 520 L1100 540 L1200 540 L1200 510 L1220 510 L1220 490 L1240 490 L1240 520 L1350 520 L1350 540 L1500 540 L1500 510 L1530 510 L1530 530 L1600 530 L1600 550 L1700 550 L1700 520 L1730 520 L1730 540 L1800 540 L1800 560 L1920 560 L1920 800 L0 800Z" fill="#0d1f3c" opacity="0.85"/>
+
+  <!-- Scattered city lights -->
+  <circle cx="120" cy="545" r="1.5" fill="#D4A843" opacity="0.3"/>
+  <circle cx="250" cy="525" r="1" fill="#D4A843" opacity="0.25"/>
+  <circle cx="350" cy="510" r="1.5" fill="#D4A843" opacity="0.2"/>
+  <circle cx="500" cy="538" r="1" fill="#D4A843" opacity="0.3"/>
+  <circle cx="710" cy="498" r="1.5" fill="#D4A843" opacity="0.2"/>
+  <circle cx="1110" cy="535" r="1" fill="#D4A843" opacity="0.25"/>
+  <circle cx="1230" cy="508" r="1.5" fill="#D4A843" opacity="0.2"/>
+  <circle cx="1520" cy="525" r="1" fill="#D4A843" opacity="0.3"/>
+  <circle cx="1720" cy="535" r="1.5" fill="#D4A843" opacity="0.2"/>
+
+  <!-- Rhine river reflection -->
+  <rect x="0" y="620" width="1920" height="180" fill="url(#water)"/>
+  <line x1="100" y1="640" x2="180" y2="640" stroke="#D4A843" stroke-width="0.5" opacity="0.1"/>
+  <line x1="400" y1="660" x2="500" y2="660" stroke="#D4A843" stroke-width="0.5" opacity="0.08"/>
+  <line x1="700" y1="650" x2="820" y2="650" stroke="#D4A843" stroke-width="0.5" opacity="0.1"/>
+  <line x1="1000" y1="645" x2="1100" y2="645" stroke="#D4A843" stroke-width="0.5" opacity="0.08"/>
+  <line x1="1300" y1="655" x2="1420" y2="655" stroke="#D4A843" stroke-width="0.5" opacity="0.1"/>
+  <line x1="1600" y1="640" x2="1700" y2="640" stroke="#D4A843" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Subtle stars -->
+  <circle cx="150" cy="80" r="1" fill="white" opacity="0.15"/>
+  <circle cx="400" cy="120" r="0.8" fill="white" opacity="0.1"/>
+  <circle cx="700" cy="60" r="1.2" fill="white" opacity="0.12"/>
+  <circle cx="1100" cy="100" r="0.8" fill="white" opacity="0.1"/>
+  <circle cx="1500" cy="70" r="1" fill="white" opacity="0.15"/>
+  <circle cx="1750" cy="130" r="0.8" fill="white" opacity="0.1"/>
+</svg>

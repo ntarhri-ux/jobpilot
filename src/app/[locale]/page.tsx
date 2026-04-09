@@ -196,40 +196,55 @@ export default function HomePage({
       />
 
       {/* ============================================ */}
-      {/* HERO — klar, seriös, mit 2 CTAs */}
+      {/* HERO — Wiesbaden Skyline, seriös, regional */}
       {/* ============================================ */}
-      <section className="relative bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--color-primary-dark)_0%,var(--color-primary)_60%,var(--color-primary-light)_100%)]" />
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyem0wLTMwVjBoLTEydjRoMTJ6TTI0IDI0aDEydi0ySDI0djJ6Ii8+PC9nPjwvZz48L3N2Zz4=')]" />
+      <section className="relative text-white overflow-hidden" aria-label="Hero">
+        {/* Background image with subtle zoom animation */}
+        <div className="absolute inset-0">
+          <img
+            src="/hero-wiesbaden.svg"
+            alt=""
+            role="presentation"
+            className="w-full h-full object-cover hero-bg-animate"
+            fetchPriority="high"
+          />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1f3c]/70 via-[#0d1f3c]/50 to-[#0d1f3c]/80" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 tracking-tight">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-xs font-medium mb-6 border border-white/10">
+              <Shield className="w-3.5 h-3.5 text-accent" />
+              <span className="text-white/80">In Zusammenarbeit mit der Agentur für Arbeit Hessen</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight">
               Jobs in Hessen finden.
-              <span className="block text-white/70 text-2xl sm:text-3xl lg:text-4xl font-medium mt-2">
-                Persönlich beraten. Gezielt vermittelt.
+              <span className="block text-white/60 text-xl sm:text-2xl lg:text-3xl font-normal mt-3 tracking-normal">
+                Persönliche Vermittlung für Wiesbaden, Frankfurt
+                <span className="hidden sm:inline"> und das Rhein-Main-Gebiet</span>
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/70 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Regionale Jobvermittlung für Wiesbaden, Frankfurt und das
-              Rhein-Main-Gebiet — digital unterstützt, persönlich begleitet, in
-              Zusammenarbeit mit der Agentur für Arbeit.
+            <p className="text-sm sm:text-base text-white/50 mb-8 leading-relaxed max-w-xl mx-auto">
+              Digital unterstützt, persönlich begleitet — mit kostenloser Karriereberatung und gezieltem Job-Matching in Ihrer Region.
             </p>
 
             {/* 2 klare CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
               <Link
                 href="/jobs"
-                className="w-full sm:w-auto px-7 py-3.5 bg-white text-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors text-center"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors text-center shadow-lg"
               >
                 Jobs entdecken
               </Link>
               <Link
                 href="/kontakt"
-                className="w-full sm:w-auto px-7 py-3.5 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-center"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/20 text-center"
               >
-                Beratung anfragen
+                Kostenlose Beratung anfragen
               </Link>
             </div>
 
@@ -237,6 +252,9 @@ export default function HomePage({
             <HeroSearch />
           </div>
         </div>
+
+        {/* Subtle bottom fade into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ============================================ */}

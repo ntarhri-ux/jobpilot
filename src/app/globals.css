@@ -86,6 +86,28 @@ html {
   background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
 }
 
+/* Hero background animation — subtle slow zoom */
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+.hero-bg-animate {
+  animation: heroZoom 25s ease-in-out alternate infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-animate {
+    animation: none;
+  }
+  .animate-fade-in-up,
+  .animate-slide-in-left {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Focus styles for accessibility */
 a:focus-visible,
 button:focus-visible,
