@@ -79,9 +79,25 @@ html {
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
 }
 
 .gradient-accent {
   background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Details/Summary reset */
+details summary::-webkit-details-marker {
+  display: none;
 }
