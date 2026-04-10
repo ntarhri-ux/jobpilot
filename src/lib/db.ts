@@ -1,24 +1,25 @@
 // @ts-nocheck
-// Prisma 7 client with Neon HTTP adapter (serverless-compatible)
+// Prisma 7 client with Neon serverless adapter for Vercel
 import { PrismaClient } from "@/generated/prisma/client";
-import { neon } from "@neondatabase/serverless";
-import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { Pool } from "@neondatabase/serverless";
+import { PrismaNeon } from "@prisma/adapter-neon";
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
-function createPrismaClient() {
+function createPrismaClient(): PrismaClient {
   const connectionString = process.env.DATABASE_URL;
+
   if (!connectionString) {
     console.error("DATABASE_URL is not set!");
-    return null as unknown as PrismaClient;
+    throw new Error("DATABASE_URL environment variable is required");
   }
 
-  const sql = neon(connectionString);
-  const adapter = new PrismaNeonHttp(sql);
+  const pool = new Pool({ connectionString });
+  const adapter = new PrismaNeon(pool);
 
-  return new PrismaClient({ adapter } as any);
+  return new PrismaClient({ adapter });
 }
 
 export const prisma = globalForPrisma.prisma ?? createPrismaClient();

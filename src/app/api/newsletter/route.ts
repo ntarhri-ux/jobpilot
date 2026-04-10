@@ -14,6 +14,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log("DATABASE_URL set:", !!process.env.DATABASE_URL);
+    console.log("DATABASE_URL type:", typeof process.env.DATABASE_URL);
+    console.log("DATABASE_URL starts:", process.env.DATABASE_URL?.substring(0, 20));
+
     const { prisma } = await import("@/lib/db");
 
     // Check if already subscribed
