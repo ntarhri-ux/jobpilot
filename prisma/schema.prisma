@@ -123,6 +123,12 @@ model BlogPost {
   author   User @relation(fields: [authorId], references: [id])
 }
 
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
 model ContactInquiry {
   id        String   @id @default(cuid())
   name      String

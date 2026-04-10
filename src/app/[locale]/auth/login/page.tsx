@@ -2,12 +2,58 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
-import { Mail, Lock, Eye, EyeOff } from "lucide-react";
+import { Link, useRouter } from "@/i18n/navigation";
+import { Mail, Lock, Eye, EyeOff, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function LoginPage() {
   const t = useTranslations();
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+
+    if (!email.trim()) {
+      setError("Bitte geben Sie Ihre E-Mail-Adresse ein.");
+      return;
+    }
+    if (!password) {
+      setError("Bitte geben Sie Ihr Passwort ein.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Ein Fehler ist aufgetreten.");
+        setLoading(false);
+        return;
+      }
+
+      setSuccess(true);
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1000);
+    } catch {
+      setError("Verbindungsfehler. Bitte versuchen Sie es erneut.");
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
@@ -25,7 +71,24 @@ export default function LoginPage() {
         </div>
 
         <div className="bg-white rounded-3xl border border-border p-8 shadow-sm">
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          {/* Success Message */}
+          {success && (
+            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <p className="text-sm text-green-700 font-medium">
+                Anmeldung erfolgreich! Sie werden weitergeleitet...
+              </p>
+            </div>
+          )}
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+              <p className="text-sm text-red-700">{error}</p>
+            </div>
+          )}
+
+          <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
                 {t("auth.email")}
@@ -34,8 +97,11 @@ export default function LoginPage() {
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" />
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@email.de"
                   className="w-full pl-12 pr-4 py-3 rounded-xl border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                  disabled={loading || success}
                 />
               </div>
             </div>
@@ -48,8 +114,11 @@ export default function LoginPage() {
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" />
                 <input
                   type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   className="w-full pl-12 pr-12 py-3 rounded-xl border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                  disabled={loading || success}
                 />
                 <button
                   type="button"
@@ -70,6 +139,7 @@ export default function LoginPage() {
                 <input
                   type="checkbox"
                   className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                  disabled={loading || success}
                 />
                 <span className="text-sm text-muted">
                   {t("auth.rememberMe")}
@@ -82,9 +152,22 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="w-full py-3 bg-primary hover:bg-primary-light text-white rounded-xl font-semibold transition-all shadow-md hover:shadow-lg"
+              disabled={loading || success}
+              className="w-full py-3 bg-primary hover:bg-primary-light text-white rounded-xl font-semibold transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {t("common.login")}
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Wird angemeldet...
+                </>
+              ) : success ? (
+                <>
+                  <CheckCircle2 className="w-4 h-4" />
+                  Erfolgreich!
+                </>
+              ) : (
+                t("common.login")
+              )}
             </button>
           </form>
 

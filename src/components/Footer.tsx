@@ -1,11 +1,54 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function Footer() {
   const t = useTranslations();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [newsletterMsg, setNewsletterMsg] = useState("");
+
+  async function handleNewsletter(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newsletterEmail.trim() || !newsletterEmail.includes("@")) {
+      setNewsletterStatus("error");
+      setNewsletterMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
+    setNewsletterStatus("loading");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail.trim() }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok && res.status !== 200) {
+        setNewsletterStatus("error");
+        setNewsletterMsg(data.error || "Ein Fehler ist aufgetreten.");
+        return;
+      }
+
+      setNewsletterStatus("success");
+      setNewsletterMsg(data.message || "Erfolgreich angemeldet!");
+      setNewsletterEmail("");
+
+      setTimeout(() => {
+        setNewsletterStatus("idle");
+        setNewsletterMsg("");
+      }, 5000);
+    } catch {
+      setNewsletterStatus("error");
+      setNewsletterMsg("Verbindungsfehler. Bitte versuchen Sie es erneut.");
+    }
+  }
 
   return (
     <footer className="bg-primary-dark text-white mt-auto">
@@ -21,16 +64,38 @@ export default function Footer() {
                 {t("footer.newsletter.subtitle")}
               </p>
             </div>
-            <div className="flex w-full md:w-auto gap-2">
-              <input
-                type="email"
-                placeholder={t("footer.newsletter.placeholder")}
-                className="px-4 py-3 rounded-xl bg-white text-foreground text-sm w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button className="px-6 py-3 bg-primary text-white rounded-xl font-semibold text-sm hover:bg-primary-light transition-colors flex items-center gap-2 whitespace-nowrap">
-                {t("footer.newsletter.button")}
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div>
+              <form onSubmit={handleNewsletter} className="flex w-full md:w-auto gap-2">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder={t("footer.newsletter.placeholder")}
+                  className="px-4 py-3 rounded-xl bg-white text-foreground text-sm w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-primary"
+                  disabled={newsletterStatus === "loading" || newsletterStatus === "success"}
+                />
+                <button
+                  type="submit"
+                  disabled={newsletterStatus === "loading" || newsletterStatus === "success"}
+                  className="px-6 py-3 bg-primary text-white rounded-xl font-semibold text-sm hover:bg-primary-light transition-colors flex items-center gap-2 whitespace-nowrap disabled:opacity-50"
+                >
+                  {newsletterStatus === "loading" ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : newsletterStatus === "success" ? (
+                    <CheckCircle2 className="w-4 h-4" />
+                  ) : (
+                    <>
+                      {t("footer.newsletter.button")}
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </form>
+              {newsletterMsg && (
+                <p className={`text-xs mt-2 ${newsletterStatus === "success" ? "text-green-800" : "text-red-800"}`}>
+                  {newsletterMsg}
+                </p>
+              )}
             </div>
           </div>
         </div>
