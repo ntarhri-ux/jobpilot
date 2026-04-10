@@ -6,6 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "", changeFreq: "daily" as const, priority: 1.0 },
     { path: "/jobs", changeFreq: "daily" as const, priority: 0.95 },
+    { path: "/fuer-bewerber", changeFreq: "weekly" as const, priority: 0.9 },
+    { path: "/fuer-arbeitgeber", changeFreq: "weekly" as const, priority: 0.9 },
+    { path: "/fuer-institutionen", changeFreq: "weekly" as const, priority: 0.85 },
+    { path: "/avgs", changeFreq: "monthly" as const, priority: 0.85 },
+    { path: "/regionen", changeFreq: "monthly" as const, priority: 0.8 },
+    { path: "/branchen", changeFreq: "monthly" as const, priority: 0.8 },
+    { path: "/faq", changeFreq: "monthly" as const, priority: 0.75 },
     { path: "/coaching", changeFreq: "weekly" as const, priority: 0.85 },
     { path: "/ratgeber", changeFreq: "weekly" as const, priority: 0.9 },
     { path: "/ueber-uns", changeFreq: "monthly" as const, priority: 0.7 },
@@ -45,6 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ratgeber": "/blog",
     "/ueber-uns": "/about",
     "/kontakt": "/contact",
+    "/fuer-bewerber": "/for-jobseekers",
+    "/fuer-arbeitgeber": "/for-employers",
+    "/fuer-institutionen": "/for-institutions",
+    "/regionen": "/regions",
+    "/branchen": "/industries",
   };
 
   // Static pages with hreflang alternates

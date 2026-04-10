@@ -76,7 +76,7 @@ export default function CoachingPage() {
           <div className="flex items-center gap-2 mb-4">
             <Shield className="w-5 h-5 text-accent" />
             <span className="text-white/80 text-sm">
-              In Zusammenarbeit mit der Agentur für Arbeit
+              Professionelle Karriereberatung in Hessen
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-2">

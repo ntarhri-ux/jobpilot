@@ -24,6 +24,28 @@ export const routing = defineRouting({
       de: "/ueber-uns",
       en: "/about",
     },
+    "/fuer-bewerber": {
+      de: "/fuer-bewerber",
+      en: "/for-jobseekers",
+    },
+    "/fuer-arbeitgeber": {
+      de: "/fuer-arbeitgeber",
+      en: "/for-employers",
+    },
+    "/fuer-institutionen": {
+      de: "/fuer-institutionen",
+      en: "/for-institutions",
+    },
+    "/avgs": "/avgs",
+    "/regionen": {
+      de: "/regionen",
+      en: "/regions",
+    },
+    "/branchen": {
+      de: "/branchen",
+      en: "/industries",
+    },
+    "/faq": "/faq",
     "/auth/login": "/auth/login",
     "/auth/register": "/auth/register",
     "/dashboard": "/dashboard",

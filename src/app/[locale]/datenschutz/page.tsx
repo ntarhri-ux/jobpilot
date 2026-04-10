@@ -93,12 +93,13 @@ export default function DatenschutzPage() {
 
         <section>
           <h2 className="text-lg font-bold text-foreground mb-2">
-            5. Zusammenarbeit mit der Agentur für Arbeit
+            5. Datenweitergabe im Rahmen der Vermittlung
           </h2>
           <p>
-            Im Rahmen unserer Zusammenarbeit mit der Agentur für Arbeit können
-            bestimmte Daten (z.B. Vermittlungsstatus, Qualifikationen) mit
-            der Agentur geteilt werden. Dies geschieht ausschließlich mit
+            Im Rahmen unserer Vermittlungstätigkeit können bestimmte Daten
+            (z.B. Qualifikationen, Berufserfahrung) mit potenziellen
+            Arbeitgebern oder — bei Vorliegen eines AVGS — mit der Agentur
+            für Arbeit geteilt werden. Dies geschieht ausschließlich mit
             Ihrer ausdrücklichen Einwilligung und auf Grundlage von Art. 6
             Abs. 1 lit. a DSGVO.
           </p>

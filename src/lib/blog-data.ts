@@ -199,7 +199,7 @@ Mit freundlichen Grüßen,
 
 ## Bonus-Tipp: Nutze professionelles Coaching
 
-Bei JobPilot bieten wir kostenloses Interview-Training für Arbeitssuchende an — in Zusammenarbeit mit der Agentur für Arbeit. Unsere erfahrenen Karriereberater simulieren reale Vorstellungsgespräche und geben dir wertvolles Feedback. So gehst du perfekt vorbereitet in dein nächstes Interview.`,
+Bei JobPilot Hessen bieten wir professionelles Interview-Training für Arbeitsuchende an. Unsere erfahrenen Karriereberater simulieren reale Vorstellungsgespräche und geben dir wertvolles Feedback. So gehst du perfekt vorbereitet in dein nächstes Interview.`,
   },
   {
     slug: "arbeitsmarkt-hessen-2026",
@@ -609,7 +609,7 @@ Gehaltsverhandlung ist eine Fähigkeit, die man lernen kann. Mit gründlicher Vo
     date: "25. Februar 2026",
     author: "Anna Becker",
     image: "/blog/wiedereinstieg.svg",
-    tags: ["Wiedereinstieg", "Arbeitsamt", "Elternzeit", "Weiterbildung"],
+    tags: ["Wiedereinstieg", "Berufspause", "Elternzeit", "Weiterbildung"],
     relatedSlugs: ["arbeitsmarkt-hessen-2026", "lebenslauf-guide", "10-tipps-vorstellungsgespraech"],
     content: `Der Wiedereinstieg in den Beruf nach einer längeren Pause — sei es wegen Elternzeit, Krankheit, Pflege von Angehörigen oder Arbeitslosigkeit — kann eine große Herausforderung sein. Aber die gute Nachricht: Der Fachkräftemangel in Hessen sorgt dafür, dass Arbeitgeber aktiv nach Wiedereinsteigern suchen. Mit der richtigen Strategie und Unterstützung gelingt der Neustart.
 
@@ -640,7 +640,7 @@ Nimm dir Zeit für eine ehrliche Selbsteinschätzung:
 Die Arbeitswelt verändert sich rasant. Was vor 3–5 Jahren Standard war, kann heute veraltet sein.
 
 **Möglichkeiten der Weiterbildung in Hessen:**
-- **Bildungsgutschein der Agentur für Arbeit:** Kostenlose Weiterbildung für Arbeitssuchende
+- **Weiterbildungsförderung der Agentur für Arbeit:** Möglichkeiten für Arbeitsuchende
 - **Volkshochschulen:** Günstige Kurse in Wiesbaden, Frankfurt etc.
 - **Online-Kurse:** Coursera, LinkedIn Learning, Udemy — flexibel von zu Hause
 - **IHK-Zertifizierungen:** Branchenanerkannte Abschlüsse
@@ -687,8 +687,9 @@ Du musst nicht sofort Vollzeit einsteigen. Stufenmodelle können den Übergang e
 Die Arbeitsagentur bietet zahlreiche Programme speziell für Wiedereinsteiger:
 
 - **Beratungsgespräche** — Individuelle Karriereplanung
-- **Bildungsgutschein** — Kostenlose Weiterbildung
+- **Weiterbildungsförderung** — Verschiedene Fördermöglichkeiten
 - **Eingliederungszuschuss** — Arbeitgeber erhalten einen Zuschuss, wenn sie Wiedereinsteiger einstellen
+- **AVGS** — Vermittlungsgutschein für private Arbeitsvermittlung
 - **Vermittlungsbudget** — Unterstützung bei Bewerbungskosten
 - **Perspektive Wiedereinstieg** — Spezielles Programm für Eltern
 
@@ -1000,7 +1001,7 @@ Nach dem ersten Schock kommt die Chance: Eine Kündigung kann der Beginn eines b
 
 1. **Nutze die Kündigungsfrist** — Aktualisiere deinen Lebenslauf, aktiviere dein Netzwerk
 2. **Lass dich beraten** — JobPilot bietet kostenlose Karriereberatung
-3. **Investiere in Weiterbildung** — Bildungsgutschein bei der Agentur für Arbeit beantragen
+3. **Investiere in Weiterbildung** — Fördermöglichkeiten bei der Agentur für Arbeit prüfen
 4. **Bleibe positiv** — Viele Menschen finden nach einer Kündigung einen besseren Job
 
 ## Fazit

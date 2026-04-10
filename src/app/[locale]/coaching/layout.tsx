@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Karriereberatung & Coaching in Wiesbaden — Kostenlos mit Bildungsgutschein",
+  title: "Karriereberatung & Coaching in Wiesbaden — Persönliche Beratung",
   description:
-    "Professionelles Jobcoaching und Karriereberatung in Wiesbaden und Frankfurt. Kostenlos mit Vermittlungsgutschein vom Arbeitsamt. Bewerbungstraining, Interviewvorbereitung und persönliche Beratung.",
+    "Professionelles Jobcoaching und Karriereberatung in Wiesbaden und Frankfurt. Bewerbungstraining, Interviewvorbereitung und persönliche Beratung. AVGS-Unterstützung möglich.",
   keywords: [
     "Karriereberatung Wiesbaden",
     "Jobcoaching Hessen",
     "Bewerbungstraining Frankfurt",
     "Coaching Arbeitsuchende",
-    "Bildungsgutschein Hessen",
+    "AVGS Coaching Hessen",
     "Karrierecoaching kostenlos",
     "Bewerbungshilfe Wiesbaden",
     "Interviewvorbereitung",
-    "Vermittlungsgutschein Arbeitsamt",
+    "Vermittlungsgutschein AVGS",
   ],
   openGraph: {
     title: "Karriereberatung & Coaching — JobPilot Hessen",
     description:
-      "Kostenlose Karriereberatung und professionelles Coaching in Wiesbaden. Mit Vermittlungsgutschein vom Arbeitsamt.",
+      "Professionelle Karriereberatung und Coaching in Wiesbaden. AVGS-Unterstützung möglich.",
     type: "website",
   },
   alternates: {

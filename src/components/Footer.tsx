@@ -72,18 +72,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Angebote */}
           <div>
-            <h4 className="font-semibold text-white mb-4">
-              {t("footer.quickLinks")}
-            </h4>
+            <h4 className="font-semibold text-white mb-4">Angebote</h4>
             <ul className="space-y-2">
               {[
-                { href: "/jobs" as const, label: t("nav.jobs") },
+                { href: "/fuer-bewerber" as const, label: "Für Bewerber" },
+                { href: "/fuer-arbeitgeber" as const, label: "Für Arbeitgeber" },
+                { href: "/fuer-institutionen" as const, label: "Für Institutionen" },
+                { href: "/avgs" as const, label: "AVGS Vermittlungsgutschein" },
                 { href: "/coaching" as const, label: t("nav.coaching") },
-                { href: "/blog" as const, label: t("nav.blog") },
-                { href: "/ueber-uns" as const, label: t("nav.about") },
-                { href: "/kontakt" as const, label: t("nav.contact") },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -97,16 +95,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Informationen */}
           <div>
-            <h4 className="font-semibold text-white mb-4">
-              {t("footer.services")}
-            </h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>{t("coaching.services.career.title")}</li>
-              <li>{t("coaching.services.application.title")}</li>
-              <li>{t("coaching.services.interview.title")}</li>
-              <li>{t("coaching.services.integration.title")}</li>
+            <h4 className="font-semibold text-white mb-4">Informationen</h4>
+            <ul className="space-y-2">
+              {[
+                { href: "/jobs" as const, label: t("nav.jobs") },
+                { href: "/regionen" as const, label: "Regionen" },
+                { href: "/branchen" as const, label: "Branchen" },
+                { href: "/blog" as const, label: t("nav.blog") },
+                { href: "/faq" as const, label: "FAQ" },
+                { href: "/ueber-uns" as const, label: t("nav.about") },
+                { href: "/kontakt" as const, label: t("nav.contact") },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/70 hover:text-accent text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

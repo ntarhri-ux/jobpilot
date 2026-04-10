@@ -34,13 +34,13 @@ export const metadata = {
   title:
     "JobPilot Hessen — Jobvermittlung & Stellenangebote in Wiesbaden, Frankfurt & Rhein-Main",
   description:
-    "Persönliche Jobvermittlung in Hessen. Finden Sie Stellenangebote in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet. Kostenlose Karriereberatung in Zusammenarbeit mit dem Arbeitsamt. Regional, persönlich, digital.",
+    "Regionale private Arbeitsvermittlung in Hessen. Stellenangebote in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet. Persönliche Karriereberatung und gezielte Vermittlung. Unterstützung im Rahmen des AVGS möglich.",
   keywords: [
     "Jobs Hessen",
     "Stellenangebote Wiesbaden",
     "Stellenangebote Frankfurt",
     "Jobvermittlung Hessen",
-    "Arbeitsamt Wiesbaden",
+    "Arbeitsvermittlung Wiesbaden",
     "Karriereberatung Rhein-Main",
     "Arbeit finden Hessen",
     "Kostenlose Jobvermittlung",
@@ -97,7 +97,7 @@ export default function HomePage({
             name: "JobPilot Hessen",
             url: "https://jobpilot-hessen.de",
             description:
-              "Regionale Jobvermittlung und Karriereberatung in Hessen. Persönlich, digital, in Zusammenarbeit mit der Agentur für Arbeit.",
+              "Regionaler privater Vermittlungsdienstleister für Hessen. Persönliche Begleitung von Bewerbern und Arbeitgebern bei passgenauer Vermittlung.",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Bahnhofstraße 42",
@@ -217,7 +217,7 @@ export default function HomePage({
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-xs font-medium mb-6 border border-white/10">
               <Shield className="w-3.5 h-3.5 text-accent" />
-              <span className="text-white/80">In Zusammenarbeit mit der Agentur für Arbeit Hessen</span>
+              <span className="text-white/80">Regionaler privater Vermittlungsdienstleister in Hessen</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 tracking-tight">
@@ -381,9 +381,9 @@ export default function HomePage({
               </p>
               <ul className="space-y-2 mb-5">
                 {[
-                  "Kooperation mit Arbeitsagentur",
-                  "Bildungsgutschein-fähig",
-                  "Regionale Integration",
+                  "Regionaler Vermittlungsdienstleister",
+                  "AVGS-Unterstützung möglich",
+                  "Nachhaltige Integration",
                 ].map((item) => (
                   <li
                     key={item}
@@ -686,7 +686,7 @@ export default function HomePage({
       </section>
 
       {/* ============================================ */}
-      {/* PARTNERSCHAFT — Arbeitsamt + Vertrauen */}
+      {/* PARTNERSCHAFT — Vertrauen + Professionalität */}
       {/* ============================================ */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -694,24 +694,24 @@ export default function HomePage({
             <div>
               <div className="inline-flex items-center gap-2 bg-primary/5 rounded-full px-3 py-1.5 text-xs text-primary font-medium mb-5">
                 <Shield className="w-3.5 h-3.5" />
-                In Zusammenarbeit mit der Agentur für Arbeit
+                Unterstützung im Rahmen bestehender Förderwege möglich
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                Vertrauensvolle Partnerschaft für Ihre Karriere
+                Professionelle Vermittlung mit persönlicher Begleitung
               </h2>
               <p className="text-muted leading-relaxed mb-6">
-                Als regionaler Partner der Agentur für Arbeit in Hessen bieten
-                wir Ihnen besondere Vorteile: Kostenlose Beratung,
-                Weiterbildungsmöglichkeiten und direkten Zugang zu
-                Stellenangeboten aus der Region.
+                Als regionaler privater Vermittlungsdienstleister in Hessen
+                bieten wir persönliche Beratung, Zugang zu regionalen Arbeitgebern
+                und Begleitung bis zur erfolgreichen Einstellung. Unterstützung
+                im Rahmen bestehender Förderwege wie dem AVGS ist möglich.
               </p>
               <ul className="space-y-3 mb-6">
                 {[
-                  "Kostenlose Karriereberatung für Arbeitssuchende",
-                  "Coaching und Bewerbungstraining mit Bildungsgutschein",
-                  "Direkte Vermittlung an regionale Arbeitgeber",
-                  "Spezielle Programme für Wiedereinstieg und Quereinstieg",
-                  "Persönliche Begleitung bis zum Vertragsabschluss",
+                  "Kostenlose Vermittlung für Arbeitsuchende",
+                  "Persönliche Beratung und Bewerbungscoaching",
+                  "Gezielte Vermittlung an regionale Arbeitgeber",
+                  "Begleitung bei Wiedereinstieg und Quereinstieg",
+                  "Unterstützung mit Vermittlungsgutschein (AVGS) möglich",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />

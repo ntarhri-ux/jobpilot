@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | JobPilot Hessen",
   },
   description:
-    "JobPilot ist Ihre Plattform für Jobvermittlung in Hessen. Finden Sie Stellenangebote in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet. Karriereberatung, Coaching und Bewerbungshilfe in Zusammenarbeit mit dem Arbeitsamt.",
+    "JobPilot Hessen — Ihr regionaler privater Vermittlungsdienstleister. Stellenangebote in Wiesbaden, Frankfurt und dem Rhein-Main-Gebiet. Persönliche Karriereberatung, Coaching und Bewerbungshilfe. AVGS-Unterstützung möglich.",
   keywords: [
     "Jobs Hessen",
     "Stellenangebote Wiesbaden",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Jobvermittlung Hessen",
     "Arbeit finden Rhein-Main",
     "Karriereberatung Wiesbaden",
-    "Arbeitsamt Hessen",
+    "Arbeitsvermittlung Hessen",
     "Bewerbungshilfe",
     "Jobcoaching Frankfurt",
     "Jobsuche Hessen",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "JobPilot",
     title: "JobPilot — Jobvermittlung & Stellenangebote in Hessen",
     description:
-      "Finden Sie Ihren Traumjob in Wiesbaden, Frankfurt und ganz Hessen. Kostenlose Karriereberatung in Zusammenarbeit mit dem Arbeitsamt.",
+      "Finden Sie Ihren Traumjob in Wiesbaden, Frankfurt und ganz Hessen. Persönliche Karriereberatung und regionale Jobvermittlung.",
     url: "https://jobpilot-hessen.de",
   },
   twitter: {
