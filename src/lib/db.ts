@@ -1,40 +1,40 @@
 // @ts-nocheck
 // Prisma 7 client with Neon serverless adapter for Vercel
-// IMPORTANT: Lazy initialization to ensure env vars are available at runtime
+// Lazy initialization with dynamic imports for serverless compatibility
 import { PrismaClient } from "@/generated/prisma/client";
+import { Pool } from "@neondatabase/serverless";
+import { PrismaNeon } from "@prisma/adapter-neon";
 
 let _prisma: PrismaClient | null = null;
 
-function getPrismaClient(): PrismaClient {
+export function getPrisma(): PrismaClient {
   if (_prisma) return _prisma;
 
   const connectionString = process.env.DATABASE_URL;
 
+  console.log("[db] Initializing PrismaClient...");
   console.log("[db] DATABASE_URL set:", !!connectionString);
-  console.log("[db] DATABASE_URL type:", typeof connectionString);
-  if (connectionString) {
-    console.log("[db] DATABASE_URL starts:", connectionString.substring(0, 25));
-  }
+  console.log("[db] typeof:", typeof connectionString);
 
   if (!connectionString) {
+    console.error("[db] DATABASE_URL is missing!");
     throw new Error("DATABASE_URL environment variable is required");
   }
 
-  // Dynamic require to avoid bundling issues
-  const { Pool } = require("@neondatabase/serverless");
-  const { PrismaNeon } = require("@prisma/adapter-neon");
+  console.log("[db] Creating Pool with:", connectionString.substring(0, 30) + "...");
 
   const pool = new Pool({ connectionString });
   const adapter = new PrismaNeon(pool);
 
   _prisma = new PrismaClient({ adapter });
+  console.log("[db] PrismaClient created successfully");
   return _prisma;
 }
 
-// Export as a getter proxy so prisma is lazily initialized on first use
+// For backward compatibility - but this will be lazy
 export const prisma = new Proxy({} as PrismaClient, {
   get(_target, prop) {
-    const client = getPrismaClient();
+    const client = getPrisma();
     const value = (client as any)[prop];
     if (typeof value === "function") {
       return value.bind(client);
