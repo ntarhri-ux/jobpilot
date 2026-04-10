@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { prisma } from "@/lib/db";
 import { signToken } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +16,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const { prisma } = await import("@/lib/db");
 
     // Find user
     const user = await prisma.user.findUnique({
@@ -48,7 +49,6 @@ export async function POST(request: NextRequest) {
       role: user.role,
     });
 
-    // Set cookie
     const response = NextResponse.json({
       success: true,
       user: {
@@ -63,16 +63,16 @@ export async function POST(request: NextRequest) {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
+      maxAge: 60 * 60 * 24 * 7,
       path: "/",
     });
 
     return response;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Login error:", error);
-    return NextResponse.json(
-      { error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut." },
-      { status: 500 }
-    );
+    const message = error?.message?.includes("connect")
+      ? "Datenbankverbindung fehlgeschlagen. Bitte kontaktieren Sie den Administrator."
+      : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

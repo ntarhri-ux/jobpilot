@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +13,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const { prisma } = await import("@/lib/db");
 
     // Check if already subscribed
     const existing = await prisma.newsletter.findUnique({
@@ -36,11 +37,11 @@ export async function POST(request: NextRequest) {
       { success: true, message: "Erfolgreich angemeldet! Sie erhalten ab sofort unseren Newsletter." },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Newsletter error:", error);
-    return NextResponse.json(
-      { error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut." },
-      { status: 500 }
-    );
+    const message = error?.message?.includes("connect")
+      ? "Datenbankverbindung fehlgeschlagen. Bitte versuchen Sie es erneut."
+      : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
