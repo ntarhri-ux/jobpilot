@@ -39,10 +39,10 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("Newsletter error:", error);
-    const message = error?.message?.includes("connect")
-      ? "Datenbankverbindung fehlgeschlagen. Bitte versuchen Sie es erneut."
-      : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Newsletter error:", error?.message, error?.stack);
+    return NextResponse.json({
+      error: "DB-Fehler",
+      detail: error?.message?.substring(0, 200) || "unknown",
+    }, { status: 500 });
   }
 }
