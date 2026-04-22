@@ -894,6 +894,65 @@ export default function HomePage({
       </section>
 
       {/* ============================================ */}
+      {/* Regionale Jobvermittlung — interne Links für SEO */}
+      {/* ============================================ */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              Jobvermittlung in Ihrer Region
+            </h2>
+            <p className="text-muted max-w-2xl mx-auto">
+              Als privater Vermittlungsdienstleister kennen wir den Arbeitsmarkt im Rhein-Main-Gebiet. Finden Sie Ihren Traumjob in Ihrer Stadt.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                city: "Wiesbaden",
+                href: "/jobvermittlung-wiesbaden",
+                stellen: "500+",
+                text: "Landeshauptstadt Hessens — Öffentlicher Dienst, Versicherungen, Gesundheitswesen",
+              },
+              {
+                city: "Frankfurt am Main",
+                href: "/jobvermittlung-frankfurt",
+                stellen: "1.800+",
+                text: "Finanzmetropole — Banken, IT, Logistik, Beratung, Flughafen",
+              },
+              {
+                city: "Hessen & Rhein-Main",
+                href: "/arbeitsvermittlung-hessen",
+                stellen: "3.500+",
+                text: "Mainz, Darmstadt, Offenbach, Bad Homburg und das gesamte Rhein-Main-Gebiet",
+              },
+            ].map((r) => (
+              <Link
+                key={r.city}
+                href={r.href as any}
+                className="bg-white border border-border rounded-2xl p-6 hover:shadow-xl hover:border-primary/30 transition-all group block"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {r.city}
+                  </h3>
+                </div>
+                <div className="text-2xl font-bold text-primary mb-1">
+                  {r.stellen}
+                </div>
+                <p className="text-xs text-muted mb-3">offene Stellen</p>
+                <p className="text-sm text-muted leading-relaxed">{r.text}</p>
+                <span className="inline-flex items-center gap-1 text-primary font-semibold text-sm mt-4 group-hover:gap-2 transition-all">
+                  Jobvermittlung {r.city.split(" ")[0]} <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* FAQ — für SEO + Vertrauen */}
       {/* ============================================ */}
       <section className="py-16 lg:py-20 bg-background">
