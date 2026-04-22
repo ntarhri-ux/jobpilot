@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const dbUrl = process["env"]["DATABASE_URL"];
+    const dbUrl = process["env"]["DATABASE_URL"] as string;
     const { getDbClient } = await import("@/lib/db");
     const prisma = await getDbClient(dbUrl);
 

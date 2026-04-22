@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Dynamic import to avoid build-time issues
-    const dbUrl = process["env"]["DATABASE_URL"];
+    const dbUrl = process["env"]["DATABASE_URL"] as string;
     const { getDbClient } = await import("@/lib/db");
     const prisma = await getDbClient(dbUrl);
 
