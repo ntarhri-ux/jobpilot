@@ -14,8 +14,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const dbUrl = process.env["DATABASE" + "_URL"] || process.env.DATABASE_URL;
     const { getDbClient } = await import("@/lib/db");
-    const prisma = await getDbClient();
+    const prisma = await getDbClient(dbUrl);
 
     // Check if already subscribed
     const existing = await prisma.newsletter.findUnique({
