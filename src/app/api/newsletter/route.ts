@@ -41,8 +41,8 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     console.error("Newsletter error:", error?.message);
     return NextResponse.json({
-      error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-      debug: process.env.NODE_ENV !== "production" ? error?.message : undefined,
+      error: "Ein Fehler ist aufgetreten.",
+      detail: String(error?.message || error).substring(0, 300),
     }, { status: 500 });
   }
 }
