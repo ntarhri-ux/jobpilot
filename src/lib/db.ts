@@ -1,9 +1,10 @@
 // @ts-nocheck
 // Prisma 7 client factory for Neon serverless on Vercel
-// Uses dynamic access patterns to prevent Turbopack from inlining env vars at build time
+// Uses HTTP adapter (neon + PrismaNeonHttp) — works on all serverless runtimes
+// No WebSocket needed, purely HTTP/fetch based
 
-import { Pool } from "@neondatabase/serverless";
-import { PrismaNeon } from "@prisma/adapter-neon";
+import { neon } from "@neondatabase/serverless";
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
 import { PrismaClient } from "@/generated/prisma/client";
 
 let cachedClient: PrismaClient | null = null;
@@ -11,20 +12,19 @@ let cachedClient: PrismaClient | null = null;
 export function getDbClient(): PrismaClient {
   if (cachedClient) return cachedClient;
 
-  // Use bracket notation to prevent Turbopack/bundler from inlining
-  // process.env.DATABASE_URL as undefined at build time
-  const envKey = "DATABASE_URL";
-  const connectionString = process.env[envKey];
+  // Dynamic key to prevent Turbopack from inlining env vars at build time
+  const envKey = "DATABASE" + "_URL";
+  const connectionString = process["env"][envKey];
 
   if (!connectionString) {
     throw new Error(
-      `DATABASE_URL environment variable is not set. ` +
-      `Available env keys: ${Object.keys(process.env).filter(k => k.includes("DATABASE") || k.includes("PG")).join(", ") || "(none matching)"}`
+      `DATABASE_URL is not set. Keys: ${Object.keys(process["env"]).filter(k => k.includes("DATA")).join(", ") || "none"}`
     );
   }
 
-  const pool = new Pool({ connectionString });
-  const adapter = new PrismaNeon(pool);
+  // Use HTTP-based neon() driver instead of WebSocket Pool
+  const sql = neon(connectionString);
+  const adapter = new PrismaNeonHttp(sql);
   cachedClient = new PrismaClient({ adapter });
 
   return cachedClient;
