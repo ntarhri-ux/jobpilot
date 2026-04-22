@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { getDbClient } = await import("@/lib/db");
-    const prisma = getDbClient();
+    const prisma = await getDbClient();
 
     // Check if already subscribed
     const existing = await prisma.newsletter.findUnique({
@@ -39,10 +39,10 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("Newsletter error:", error?.message, error?.stack);
+    console.error("Newsletter error:", error?.message);
     return NextResponse.json({
-      error: "DB-Fehler",
-      detail: error?.message?.substring(0, 200) || "unknown",
+      error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+      debug: process.env.NODE_ENV !== "production" ? error?.message : undefined,
     }, { status: 500 });
   }
 }

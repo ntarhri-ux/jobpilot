@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
     // Dynamic import to avoid build-time issues
     const { getDbClient } = await import("@/lib/db");
-    const prisma = getDbClient();
+    const prisma = await getDbClient();
 
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({

@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { getDbClient } = await import("@/lib/db");
-    const prisma = getDbClient();
+    const prisma = await getDbClient();
 
     // Find user
     const user = await prisma.user.findUnique({
