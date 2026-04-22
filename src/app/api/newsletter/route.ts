@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     // ALL DB logic inline — no external imports that bundler can destroy
     const url = process["env"]["DATABASE_URL"];
     if (!url) {
-      return NextResponse.json({ error: "DB config missing" }, { status: 500 });
+      return NextResponse.json({ error: "DB config missing", version: "v8-inline" }, { status: 500 });
     }
 
     const { Pool } = await import("@neondatabase/serverless");
@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
     console.error("Newsletter error:", error?.message);
     return NextResponse.json({
       error: "Ein Fehler ist aufgetreten.",
+      version: "v8-inline",
       detail: String(error?.message || error).substring(0, 300),
     }, { status: 500 });
   }
