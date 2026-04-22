@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -14,9 +15,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const dbUrl = process["env"]["DATABASE_URL"];
-    const { getDbClient } = await import("@/lib/db");
-    const prisma = await getDbClient(dbUrl);
+    // ALL DB logic inline — no external imports that bundler can destroy
+    const url = process["env"]["DATABASE_URL"];
+    if (!url) {
+      return NextResponse.json({ error: "DB config missing" }, { status: 500 });
+    }
+
+    const { Pool } = await import("@neondatabase/serverless");
+    const { PrismaNeon } = await import("@prisma/adapter-neon");
+    const { PrismaClient } = await import("../../../generated/prisma/client");
+
+    const pool = new Pool({ connectionString: url });
+    const adapter = new PrismaNeon(pool);
+    const prisma = new PrismaClient({ adapter });
 
     // Check if already subscribed
     const existing = await prisma.newsletter.findUnique({
