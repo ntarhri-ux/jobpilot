@@ -48,10 +48,9 @@ export async function POST(request: NextRequest) {
     );
   } catch (error: any) {
     console.error("Newsletter error:", error?.message);
-    return NextResponse.json({
-      error: "Ein Fehler ist aufgetreten.",
-      version: "v9-neon-direct",
-      detail: String(error?.message || error).substring(0, 300),
-    }, { status: 500 });
+    return NextResponse.json(
+      { error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut." },
+      { status: 500 }
+    );
   }
 }
