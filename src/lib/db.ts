@@ -1,25 +1,32 @@
 // @ts-nocheck
-// Prisma 7 client factory for Neon serverless on Vercel
-// ALL imports are dynamic to prevent Turbopack from bundling/replacing them
+// Prisma 7 + Neon serverless for Vercel
+// ALL imports dynamic, env var access uses anti-inlining tricks
 
 let cachedClient: any = null;
 
 export async function getDbClient() {
   if (cachedClient) return cachedClient;
 
-  // Dynamic imports — bypasses Turbopack bundling entirely
-  const neonMod = await import("@neondatabase/serverless");
-  const adapterMod = await import("@prisma/adapter-neon");
-  const prismaMod = await import("@/generated/prisma/client");
+  // CRITICAL: prevent Turbopack from statically analyzing these imports
+  const neonPkg = "@neondatabase/serverless";
+  const adapterPkg = "@prisma/adapter-neon";
+  const prismaPkg = "../generated/prisma/client";
 
-  const connectionString = process.env.DATABASE_URL;
+  const neonMod = await import(/* webpackIgnore: true */ neonPkg);
+  const adapterMod = await import(/* webpackIgnore: true */ adapterPkg);
+  const prismaMod = await import(prismaPkg);
 
-  if (!connectionString) {
-    throw new Error("DATABASE_URL is not set");
+  // Anti-inlining: build the key dynamically so Turbopack can't replace it
+  const key = ["DATABASE", "URL"].join("_");
+  const url = process["env"][key];
+
+  if (!url || typeof url !== "string") {
+    throw new Error(`DATABASE_URL not set or not a string. Type: ${typeof url}`);
   }
 
-  const sql = neonMod.neon(connectionString);
-  const adapter = new adapterMod.PrismaNeonHttp(sql);
+  // Pool-based approach (WebSocket) — works on Node.js 18+ (Vercel Functions)
+  const pool = new neonMod.Pool({ connectionString: url });
+  const adapter = new adapterMod.PrismaNeon(pool);
   cachedClient = new prismaMod.PrismaClient({ adapter });
 
   return cachedClient;
