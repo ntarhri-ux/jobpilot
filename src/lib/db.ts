@@ -1,23 +1,31 @@
 // @ts-nocheck
 // Prisma 7 client factory for Neon serverless on Vercel
-// Each API call creates a fresh client to avoid build-time bundling issues
+// Uses dynamic access patterns to prevent Turbopack from inlining env vars at build time
 
+import { Pool } from "@neondatabase/serverless";
+import { PrismaNeon } from "@prisma/adapter-neon";
 import { PrismaClient } from "@/generated/prisma/client";
 
-export async function createPrismaClient(): Promise<PrismaClient> {
-  const connectionString = process.env.DATABASE_URL;
+let cachedClient: PrismaClient | null = null;
 
-  console.log("[db] DATABASE_URL available:", !!connectionString);
+export function getDbClient(): PrismaClient {
+  if (cachedClient) return cachedClient;
+
+  // Use bracket notation to prevent Turbopack/bundler from inlining
+  // process.env.DATABASE_URL as undefined at build time
+  const envKey = "DATABASE_URL";
+  const connectionString = process.env[envKey];
 
   if (!connectionString) {
-    throw new Error("DATABASE_URL is not set");
+    throw new Error(
+      `DATABASE_URL environment variable is not set. ` +
+      `Available env keys: ${Object.keys(process.env).filter(k => k.includes("DATABASE") || k.includes("PG")).join(", ") || "(none matching)"}`
+    );
   }
-
-  const { Pool } = await import("@neondatabase/serverless");
-  const { PrismaNeon } = await import("@prisma/adapter-neon");
 
   const pool = new Pool({ connectionString });
   const adapter = new PrismaNeon(pool);
+  cachedClient = new PrismaClient({ adapter });
 
-  return new PrismaClient({ adapter });
+  return cachedClient;
 }
