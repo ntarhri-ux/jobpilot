@@ -202,8 +202,8 @@ export default function HomePage({
         {/* Background image with subtle zoom animation */}
         <div className="absolute inset-0">
           <img
-            src="/hero-wiesbaden.svg"
-            alt="Jobvermittlung und Karriereberatung im Rhein-Main-Gebiet — Wiesbaden, Frankfurt, Mainz"
+            src="/hero-rhein-main.jpg"
+            alt="Frankfurt Skyline und Main — Jobvermittlung und Karriereberatung im Rhein-Main-Gebiet"
             className="w-full h-full object-cover hero-bg-animate"
             fetchPriority="high"
           />
