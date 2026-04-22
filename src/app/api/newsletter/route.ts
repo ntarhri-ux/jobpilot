@@ -15,36 +15,32 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ALL DB logic inline — no external imports that bundler can destroy
     const url = process["env"]["DATABASE_URL"];
     if (!url) {
-      return NextResponse.json({ error: "DB config missing", version: "v8-inline" }, { status: 500 });
+      return NextResponse.json({ error: "DB URL missing" }, { status: 500 });
     }
 
-    const { Pool } = await import("@neondatabase/serverless");
-    const { PrismaNeon } = await import("@prisma/adapter-neon");
-    const { PrismaClient } = await import("../../../generated/prisma/client");
+    // Use neon HTTP driver directly — no Pool, no Prisma
+    const { neon } = await import("@neondatabase/serverless");
+    const sql = neon(url);
 
-    const pool = new Pool({ connectionString: url });
-    const adapter = new PrismaNeon(pool);
-    const prisma = new PrismaClient({ adapter });
+    const normalizedEmail = email.toLowerCase();
 
     // Check if already subscribed
-    const existing = await prisma.newsletter.findUnique({
-      where: { email: email.toLowerCase() },
-    });
+    const existing = await sql`SELECT id FROM "Newsletter" WHERE email = ${normalizedEmail} LIMIT 1`;
 
-    if (existing) {
+    if (existing.length > 0) {
       return NextResponse.json(
         { message: "Sie sind bereits für den Newsletter angemeldet." },
         { status: 200 }
       );
     }
 
+    // Generate a cuid-like ID
+    const id = 'nl_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
+
     // Subscribe
-    await prisma.newsletter.create({
-      data: { email: email.toLowerCase() },
-    });
+    await sql`INSERT INTO "Newsletter" (id, email, "createdAt") VALUES (${id}, ${normalizedEmail}, NOW())`;
 
     return NextResponse.json(
       { success: true, message: "Erfolgreich angemeldet! Sie erhalten ab sofort unseren Newsletter." },
@@ -54,7 +50,7 @@ export async function POST(request: NextRequest) {
     console.error("Newsletter error:", error?.message);
     return NextResponse.json({
       error: "Ein Fehler ist aufgetreten.",
-      version: "v8-inline",
+      version: "v9-neon-direct",
       detail: String(error?.message || error).substring(0, 300),
     }, { status: 500 });
   }
