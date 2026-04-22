@@ -1162,6 +1162,354 @@ Manche Stellen — besonders im gehobenen und höheren Dienst — beinhalten ein
 
 Der öffentliche Dienst in Hessen bietet hervorragende Karrieremöglichkeiten — aber die Bewerbung erfordert eine sorgfältige Vorbereitung. Nimm dir Zeit, die Ausschreibung genau zu analysieren, bereite maßgeschneiderte Unterlagen vor und übe für das strukturierte Interview. Die Mühe lohnt sich: Kaum ein Arbeitgeber bietet so viel Sicherheit und so gute Rahmenbedingungen.`,
   },
+  {
+    slug: "avgs-coaching-rhein-main",
+    title: "AVGS-Coaching in Frankfurt, Wiesbaden & Mainz: Alles was du wissen musst",
+    excerpt:
+      "Mit dem Aktivierungs- und Vermittlungsgutschein (AVGS) bekommst du kostenloses Karriere-Coaching. Wir erklären, wie du ihn beantragst und optimal nutzt.",
+    category: "Karriere",
+    readTime: 10,
+    date: "20. April 2026",
+    author: "Nabil Tarhri",
+    image: "/blog/coaching.svg",
+    tags: ["AVGS", "Coaching", "Arbeitsagentur", "Frankfurt", "Wiesbaden", "Mainz", "Karriereberatung"],
+    relatedSlugs: ["beruflicher-wiedereinstieg", "10-tipps-vorstellungsgespraech", "quereinstieg-ki-rhein-main"],
+    content: `Du bist arbeitssuchend und möchtest professionelle Unterstützung bei der Jobsuche? Der Aktivierungs- und Vermittlungsgutschein (AVGS) der Agentur für Arbeit kann dir genau dabei helfen — und zwar **komplett kostenlos**. In der Rhein-Main-Region gibt es zahlreiche zertifizierte Anbieter, die dir mit Coaching, Bewerbungstraining und Vermittlung zur Seite stehen.
+
+## Was ist der AVGS?
+
+Der AVGS (Aktivierungs- und Vermittlungsgutschein) ist ein Fördermittel der Agentur für Arbeit und des Jobcenters. Er ermöglicht es dir, kostenlose Maßnahmen zur beruflichen Eingliederung in Anspruch zu nehmen.
+
+### Welche Leistungen werden gefördert?
+
+- **Bewerbungscoaching:** Professionelle Hilfe bei Lebenslauf, Anschreiben und Online-Bewerbungen
+- **Karriereberatung:** Individuelle Analyse deiner Stärken und Berufsplanung
+- **Vermittlungscoaching:** Aktive Unterstützung bei der Stellensuche und Arbeitsvermittlung
+- **Existenzgründungsberatung:** Beratung für den Weg in die Selbstständigkeit
+- **Sprachförderung:** Verbesserung der Deutschkenntnisse für den Arbeitsmarkt
+- **Digitales Coaching:** Online-Bewerbungen, LinkedIn-Profil und digitale Kompetenzen
+
+## Wer hat Anspruch auf einen AVGS?
+
+Grundsätzlich können folgende Personen einen AVGS erhalten:
+
+1. **Arbeitslose** (ALG I oder ALG II Empfänger)
+2. **Von Arbeitslosigkeit bedrohte** Personen (Kündigung erhalten)
+3. **Berufsrückkehrer** nach Elternzeit oder Pflegezeit
+4. **Langzeitarbeitslose** mit besonderem Unterstützungsbedarf
+
+### So beantragst du den AVGS
+
+1. Vereinbare einen Termin bei deiner **Agentur für Arbeit** oder deinem **Jobcenter**
+2. Sprich deinen Vermittler aktiv auf den AVGS an
+3. Begründe, warum ein Coaching dir bei der Jobsuche helfen würde
+4. Wähle einen **AZAV-zertifizierten Träger** in deiner Nähe
+5. Der Gutschein wird direkt an den Träger übermittelt
+
+**Wichtig:** Du hast einen **Rechtsanspruch** auf den AVGS, wenn du seit mindestens 6 Wochen arbeitslos bist (§ 45 SGB III). Bei kürzerer Arbeitslosigkeit liegt es im Ermessen deines Vermittlers.
+
+## AVGS-Coaching in der Rhein-Main-Region
+
+### Frankfurt am Main
+Frankfurt ist als Finanzmetropole ein hervorragender Standort für Karriere-Coaching. Besonders gefragt sind Coachings in den Bereichen:
+- Finanzsektor und Banking
+- IT und Digitalisierung
+- Logistik und Flughafenbereich
+
+### Wiesbaden
+Als Landeshauptstadt bietet Wiesbaden viele Möglichkeiten im öffentlichen Dienst und bei Versicherungen. AVGS-Coaching hilft hier besonders bei:
+- Bewerbungen im öffentlichen Sektor
+- Einstieg bei Versicherungsunternehmen (R+V, DBV)
+- Verwaltungsberufe beim Land Hessen
+
+### Mainz
+Direkt gegenüber von Wiesbaden bietet Mainz als Medienstandort (ZDF, SWR) und Universitätsstadt eigene Karrierechancen:
+- Medien- und Kommunikationsbranche
+- Pharma und Biotechnologie (BioNTech)
+- Wissenschaft und Forschung
+
+## Was bringt ein AVGS-Coaching wirklich?
+
+### Vorteile eines professionellen Coachings
+
+| Ohne Coaching | Mit AVGS-Coaching |
+| Alleine im Bewerbungsdschungel | Professionelle Begleitung |
+| Standardbewerbungen | Maßgeschneiderte Unterlagen |
+| Unsicherheit im Vorstellungsgespräch | Gezieltes Interview-Training |
+| Keine Netzwerke | Zugang zu verdecktem Stellenmarkt |
+| Motivationsverlust | Regelmäßige Unterstützung |
+
+### Erfolgsquoten
+Studien zeigen, dass Teilnehmer an AVGS-Maßnahmen eine **deutlich höhere Vermittlungsquote** haben als Arbeitssuchende ohne Coaching. Die individuelle Betreuung macht den Unterschied.
+
+## Darauf solltest du bei der Wahl achten
+
+- **AZAV-Zertifizierung:** Ohne diese Zertifizierung kann der Gutschein nicht eingelöst werden
+- **Erfahrung in deiner Branche:** Der Coach sollte den Arbeitsmarkt in deinem Bereich kennen
+- **Individuelle Betreuung:** Einzel-Coaching ist effektiver als Gruppenmaßnahmen
+- **Flexibilität:** Sowohl Präsenz als auch Online-Coaching sollten möglich sein
+- **Regionale Expertise:** Kenntnis des Arbeitsmarkts im Rhein-Main-Gebiet
+
+## JobPilot als AVGS-Partner
+
+Bei JobPilot in Wiesbaden kombinieren wir **Karriere-Coaching mit aktiver Arbeitsvermittlung**. Als privater Vermittlungsdienstleister kennen wir den regionalen Arbeitsmarkt und haben direkte Kontakte zu Arbeitgebern in der Region.
+
+**Unsere AVGS-Leistungen:**
+- Persönliches Einzelcoaching (Präsenz oder Online)
+- Professionelle Bewerbungserstellung
+- Interview-Training mit Feedback
+- Aktive Vermittlung an regionale Arbeitgeber
+- Begleitung während der Probezeit
+
+## Fazit
+
+Der AVGS ist eines der wertvollsten Fördermittel für Arbeitssuchende in Deutschland — und trotzdem nutzen viele Betroffene diese Chance nicht. Wenn du in Frankfurt, Wiesbaden, Mainz oder dem Rhein-Main-Gebiet auf Jobsuche bist, solltest du unbedingt nach einem AVGS fragen. Die Kombination aus professionellem Coaching und regionaler Arbeitsvermittlung kann den entscheidenden Unterschied machen.`,
+  },
+  {
+    slug: "quereinstieg-ki-rhein-main",
+    title: "Quereinstieg in IT & KI: So gelingt der Berufswechsel im Rhein-Main-Gebiet",
+    excerpt:
+      "Künstliche Intelligenz und IT boomen — auch ohne Informatikstudium kannst du einsteigen. Welche Wege es in Frankfurt, Wiesbaden und Darmstadt gibt.",
+    category: "Karriere",
+    readTime: 9,
+    date: "18. April 2026",
+    author: "Nabil Tarhri",
+    image: "/blog/it-karriere.svg",
+    tags: ["Quereinstieg", "KI", "IT-Jobs", "Frankfurt", "Rhein-Main", "Weiterbildung", "Karrierewechsel"],
+    relatedSlugs: ["it-jobs-rhein-main", "avgs-coaching-rhein-main", "arbeitsmarkt-hessen-2026"],
+    content: `Der IT-Sektor und besonders der Bereich Künstliche Intelligenz (KI) wachsen rasant — und der Fachkräftemangel macht einen Quereinstieg attraktiver denn je. Im Rhein-Main-Gebiet, einem der stärksten Technologie-Standorte Deutschlands, stehen die Chancen besonders gut.
+
+## Warum jetzt der richtige Zeitpunkt ist
+
+### Der Arbeitsmarkt in Zahlen
+- **Über 15.000 offene IT-Stellen** in der Rhein-Main-Region
+- **42% der Unternehmen** in Frankfurt suchen aktiv KI-Fachkräfte
+- **Durchschnittlich 30% höhere Gehälter** als in vergleichbaren Branchen
+- **85% der Arbeitgeber** akzeptieren Quereinsteiger mit nachgewiesener Kompetenz
+
+Der Fachkräftemangel in der IT ist so akut, dass Unternehmen zunehmend bereit sind, Kandidaten ohne klassisches Informatikstudium einzustellen — vorausgesetzt, sie bringen die richtigen Skills und Motivation mit.
+
+## Diese IT-Bereiche suchen Quereinsteiger
+
+### 1. Data Analytics & Business Intelligence
+**Warum ideal für Quereinsteiger:** Wer bereits Erfahrung mit Excel, Zahlen und Analysen hat, bringt wichtige Grundlagen mit.
+
+**Gefragte Skills:**
+- SQL und Datenbanken
+- Python oder R für Datenanalyse
+- Visualisierung mit Power BI oder Tableau
+- Statistisches Grundverständnis
+
+**Einstiegsgehalt:** 45.000 – 60.000 € in Frankfurt
+
+### 2. KI und Machine Learning
+**Warum boomt dieser Bereich:** ChatGPT und Co. haben einen enormen Bedarf an KI-Fachkräften geschaffen.
+
+**Einstiegsmöglichkeiten:**
+- KI-Projektmanagement (kein Deep-Tech-Wissen nötig)
+- Prompt Engineering und KI-Integration
+- KI-Training und Datenaufbereitung
+- Ethik und Governance von KI-Systemen
+
+**Einstiegsgehalt:** 50.000 – 70.000 € im Rhein-Main-Gebiet
+
+### 3. Cybersecurity
+**Warum gerade jetzt:** Mit zunehmender Digitalisierung steigt der Bedarf an Sicherheitsexperten massiv.
+
+**Gefragte Quereinsteiger-Profile:**
+- Juristen (Datenschutz, Compliance)
+- Ex-Polizisten (Forensik, Ermittlung)
+- Betriebswirte (Risk Management)
+
+**Einstiegsgehalt:** 48.000 – 65.000 €
+
+### 4. UX/UI Design
+**Warum kreative Köpfe gesucht sind:** Gute digitale Produkte brauchen Designer, die Nutzer verstehen.
+
+**Ideale Quereinsteiger:**
+- Grafiker und Designer
+- Psychologen (Nutzerverhalten)
+- Marketing-Fachleute
+
+**Einstiegsgehalt:** 42.000 – 55.000 €
+
+## Schritt für Schritt in die IT
+
+### Phase 1: Orientierung (1–2 Monate)
+- Recherchiere verschiedene IT-Bereiche
+- Besuche kostenlose Webinare und Meetups
+- Sprich mit IT-Fachleuten in deinem Netzwerk
+- Nutze kostenlose Kurse auf YouTube, Coursera oder edX
+
+### Phase 2: Grundlagen aufbauen (3–6 Monate)
+- Wähle einen konkreten Bereich
+- Absolviere einen strukturierten Online-Kurs
+- Starte ein persönliches Projekt (z.B. eigene Website, Datenanalyse)
+- Tritt lokalen IT-Communities bei
+
+### Phase 3: Zertifizierung & Portfolio (2–3 Monate)
+- Hole dir anerkannte Zertifikate (Google, AWS, Microsoft)
+- Baue ein Portfolio mit 3-5 Projekten
+- Erstelle ein starkes LinkedIn-Profil
+- Besuche Tech-Meetups in Frankfurt und Darmstadt
+
+### Phase 4: Bewerbung & Einstieg
+- Bewirb dich gezielt bei Unternehmen, die Quereinsteiger willkommen heißen
+- Nutze ein AVGS-Coaching für die optimale Bewerbungsstrategie
+- Netzwerke bei lokalen IT-Events
+
+## Die besten Arbeitgeber für IT-Quereinsteiger im Rhein-Main-Gebiet
+
+### Frankfurt am Main
+- **Deutsche Bank & Commerzbank** — FinTech-Abteilungen
+- **European Central Bank** — IT und Datenanalyse
+- **SAP (Eschborn)** — Consulting und Support
+- **Accenture & McKinsey** — Digitale Transformation
+
+### Wiesbaden & Mainz
+- **R+V Versicherung** — InsurTech und Digitalisierung
+- **Landesregierung Hessen** — Digitale Verwaltung
+- **BioNTech (Mainz)** — Bio-Informatik und KI
+
+### Darmstadt
+- **Software AG** — Enterprise Software
+- **Merck** — Pharma-IT und Forschung
+- **TU Darmstadt Umfeld** — Startups und Spin-offs
+
+## Finanzierungsmöglichkeiten
+
+- **AVGS (Aktivierungs- und Vermittlungsgutschein):** Kostenloses Coaching über die Arbeitsagentur
+- **Bildungsgutschein:** Bis zu 100% Förderung für Weiterbildungen
+- **WeGebAU:** Förderung für Beschäftigte, die sich weiterbilden möchten
+- **Aufstiegs-BAföG:** Für Fortbildungen mit anerkanntem Abschluss
+- **Selbstfinanzierung:** Viele Online-Kurse kosten unter 500 €
+
+## Fazit
+
+Der Quereinstieg in die IT und KI war nie einfacher als heute. Der massive Fachkräftemangel im Rhein-Main-Gebiet öffnet Türen für motivierte Karrierewechsler. Mit einem klaren Plan, den richtigen Zertifizierungen und der Nutzung von Fördermöglichkeiten wie dem AVGS oder Bildungsgutschein kannst du innerhalb von 6–12 Monaten den Sprung in eine zukunftssichere Branche schaffen.`,
+  },
+  {
+    slug: "zeitarbeit-vs-festanstellung",
+    title: "Zeitarbeit vs. Festanstellung 2026: Was lohnt sich wirklich?",
+    excerpt:
+      "Zeitarbeit hat sich verändert — Equal Pay, Branchenzuschläge und Übernahmechancen machen sie zur echten Alternative. Ein ehrlicher Vergleich.",
+    category: "Arbeitsmarkt",
+    readTime: 8,
+    date: "15. April 2026",
+    author: "Nabil Tarhri",
+    image: "/blog/arbeitsmarkt.svg",
+    tags: ["Zeitarbeit", "Festanstellung", "Equal Pay", "Rhein-Main", "Leiharbeit", "Arbeitsvertrag"],
+    relatedSlugs: ["arbeitsmarkt-hessen-2026", "arbeitsrecht-kuendigung", "avgs-coaching-rhein-main"],
+    content: `Zeitarbeit hat in Deutschland oft einen schlechten Ruf — doch die Realität hat sich grundlegend gewandelt. Gesetzliche Regelungen wie Equal Pay, Branchenzuschläge und hohe Übernahmequoten machen Zeitarbeit zu einer ernstzunehmenden Option. Gerade im Rhein-Main-Gebiet, wo die Wirtschaft brummt und Fachkräfte gesucht werden, bietet sie Chancen, die viele unterschätzen.
+
+## Was hat sich bei der Zeitarbeit verändert?
+
+### Equal Pay seit 2017
+Nach spätestens **9 Monaten** müssen Zeitarbeitnehmer das gleiche Gehalt wie Festangestellte erhalten. Bei Tarifverträgen mit Branchenzuschlägen greift diese Angleichung oft schon nach 6 Wochen.
+
+### Branchenzuschläge
+In vielen Branchen (Metall, Chemie, Banken) gibt es tarifliche Zuschläge, die das Gehalt ab dem ersten Tag deutlich erhöhen.
+
+### Übernahmequote
+Die durchschnittliche Übernahmequote liegt bei **35–40%** — in Fachkräfte-Mangelberufen sogar bei über **60%**. Viele Unternehmen nutzen Zeitarbeit gezielt als verlängerte Probezeit.
+
+## Der ehrliche Vergleich
+
+### Gehalt und Sozialleistungen
+
+| Aspekt | Zeitarbeit | Festanstellung |
+| Einstiegsgehalt | Oft niedriger (Angleichung nach 9 Monaten) | Sofort volles Gehalt |
+| Weihnachtsgeld | Je nach Tarifvertrag | Häufig vorhanden |
+| Urlaubsgeld | Meist 24-25 Tage | Oft 28-30 Tage |
+| Betriebliche Altersvorsorge | Selten in ersten Monaten | Häufig ab Beginn |
+| Weiterbildung | Zunehmend vorhanden | Meist umfangreicher |
+
+### Flexibilität und Sicherheit
+
+| Aspekt | Zeitarbeit | Festanstellung |
+| Kündigungsschutz | Eingeschränkt | Nach 6 Monaten stark |
+| Vielfalt der Aufgaben | Wechselnde Einsätze | Ein Arbeitsplatz |
+| Einstiegschance | Niedrige Hürde | Oft aufwändiges Verfahren |
+| Branchenwechsel | Leicht möglich | Schwieriger |
+| Netzwerk aufbauen | Viele Kontakte | Tiefere Beziehungen |
+
+## Wann ist Zeitarbeit die bessere Wahl?
+
+### 1. Du bist Berufseinsteiger oder Wiedereinsteiger
+Zeitarbeit bietet die Möglichkeit, schnell und unkompliziert ins Berufsleben einzusteigen — ohne monatelange Bewerbungsmarathons.
+
+### 2. Du willst eine Branche kennenlernen
+Statt dich blind für eine Firma zu entscheiden, kannst du verschiedene Unternehmen und Branchen testen.
+
+### 3. Du bist in einer schwierigen Bewerbungssituation
+Bei Lücken im Lebenslauf, fehlenden Qualifikationen oder nach langer Arbeitslosigkeit ist Zeitarbeit ein bewährter Weg zurück.
+
+### 4. Du suchst schnell einen Job
+Zeitarbeitsunternehmen vermitteln oft innerhalb weniger Tage — Festanstellungen dauern durchschnittlich 3-6 Monate.
+
+## Wann ist Festanstellung klar besser?
+
+### 1. Du hast eine klare Karrierevorstellung
+Wenn du genau weißt, wo du arbeiten willst und die Qualifikationen dafür hast, bewirb dich direkt.
+
+### 2. Du brauchst Planungssicherheit
+Hauskauf, Familienplanung oder andere langfristige Verpflichtungen sprechen für die Festanstellung.
+
+### 3. Du bist Spezialist mit hoher Nachfrage
+Als gefragter Facharbeiter oder IT-Spezialist im Rhein-Main-Gebiet hast du die Verhandlungsposition für eine direkte Festanstellung.
+
+## Zeitarbeit im Rhein-Main-Gebiet: Die aktuelle Lage
+
+### Branchen mit hoher Zeitarbeit-Nachfrage
+- **Logistik:** Flughafen Frankfurt, DHL-Hub, Lagerhaltung
+- **Produktion:** Opel Rüsselsheim, Continental, Samson AG
+- **Kaufmännisch:** Banken in Frankfurt, Versicherungen in Wiesbaden
+- **IT:** SAP-Consulting, Projektarbeit, Support
+- **Gesundheit:** Pflege, medizinische Assistenz
+
+### Durchschnittliche Stundenlöhne (Zeitarbeit Rhein-Main)
+- Helfer/ungelernt: 13,50 – 15,00 €/h
+- Facharbeiter: 16,00 – 22,00 €/h
+- Kaufmännisch: 17,00 – 24,00 €/h
+- IT und Technik: 25,00 – 45,00 €/h
+- Ingenieure: 30,00 – 55,00 €/h
+
+## Tipps für den Umgang mit Zeitarbeit
+
+### Vor der Unterschrift
+- Prüfe den **Tarifvertrag** (BAP/iGZ)
+- Frage nach **Branchenzuschlägen**
+- Kläre die **Übernahmemöglichkeit**
+- Lies den Vertrag komplett — achte auf Klauseln zu Einsatzort und Kündigung
+
+### Während des Einsatzes
+- Zeige **Engagement und Zuverlässigkeit**
+- Netzwerke aktiv im Einsatzbetrieb
+- Sprich die **Übernahme nach 6 Monaten** aktiv an
+- Dokumentiere deine Leistungen und Erfolge
+
+### Deine Rechte als Zeitarbeiter
+- **Equal Pay** nach 9 Monaten
+- Recht auf **Arbeitszeugnis** nach jedem Einsatz
+- **Kündigungsfristen** laut Tarifvertrag
+- Anspruch auf **Weiterbildung**
+- **Gleiche Arbeitsbedingungen** wie Stammbelegschaft (Kantine, Parkplatz, etc.)
+
+## Der Hybrid-Ansatz: Das Beste aus beiden Welten
+
+Immer mehr Arbeitnehmer im Rhein-Main-Gebiet nutzen einen smarten Ansatz:
+
+1. **Einstieg über Zeitarbeit** — Schnell in Beschäftigung kommen
+2. **Netzwerk aufbauen** — Im Einsatzbetrieb Kontakte knüpfen
+3. **Übernahme anstreben** — Nach 6-12 Monaten in Festanstellung wechseln
+4. **Alternative:** Erfahrung nutzen für Direktbewerbung bei anderem Arbeitgeber
+
+Dieser Weg kombiniert den schnellen Einstieg der Zeitarbeit mit der langfristigen Sicherheit der Festanstellung.
+
+## Fazit
+
+Zeitarbeit und Festanstellung sind keine Gegensätze — sie sind verschiedene Wege zum gleichen Ziel. Im boomenden Rhein-Main-Gebiet kann Zeitarbeit ein strategisch kluger Einstieg sein, besonders wenn du schnell arbeiten möchtest, eine Branche testen willst oder nach einer beruflichen Pause wieder einsteigen möchtest. Entscheidend ist, dass du deine Rechte kennst, aktiv nach Übernahmemöglichkeiten fragst und die Zeit im Einsatzbetrieb optimal nutzt.`,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

@@ -31,6 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "it-jobs-rhein-main",
     "arbeitsrecht-kuendigung",
     "bewerbung-oeffentlicher-dienst",
+    "avgs-coaching-rhein-main",
+    "quereinstieg-ki-rhein-main",
+    "zeitarbeit-vs-festanstellung",
   ];
 
   // Job detail slugs

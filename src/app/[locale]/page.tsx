@@ -203,8 +203,7 @@ export default function HomePage({
         <div className="absolute inset-0">
           <img
             src="/hero-wiesbaden.svg"
-            alt=""
-            role="presentation"
+            alt="Jobvermittlung und Karriereberatung im Rhein-Main-Gebiet — Wiesbaden, Frankfurt, Mainz"
             className="w-full h-full object-cover hero-bg-animate"
             fetchPriority="high"
           />
