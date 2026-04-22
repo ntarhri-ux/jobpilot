@@ -19,6 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/kontakt", changeFreq: "monthly" as const, priority: 0.7 },
     { path: "/impressum", changeFreq: "yearly" as const, priority: 0.3 },
     { path: "/datenschutz", changeFreq: "yearly" as const, priority: 0.3 },
+    { path: "/jobvermittlung-wiesbaden", changeFreq: "weekly" as const, priority: 0.95 },
+    { path: "/jobvermittlung-frankfurt", changeFreq: "weekly" as const, priority: 0.95 },
+    { path: "/arbeitsvermittlung-hessen", changeFreq: "weekly" as const, priority: 0.95 },
   ];
 
   // Blog article slugs for dynamic sitemap

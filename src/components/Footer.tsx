@@ -166,6 +166,9 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/jobs" as const, label: t("nav.jobs") },
+                { href: "/jobvermittlung-wiesbaden" as any, label: "Jobvermittlung Wiesbaden" },
+                { href: "/jobvermittlung-frankfurt" as any, label: "Jobvermittlung Frankfurt" },
+                { href: "/arbeitsvermittlung-hessen" as any, label: "Arbeitsvermittlung Hessen" },
                 { href: "/regionen" as const, label: "Regionen" },
                 { href: "/branchen" as const, label: "Branchen" },
                 { href: "/blog" as const, label: t("nav.blog") },
